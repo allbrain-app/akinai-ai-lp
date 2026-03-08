@@ -128,6 +128,27 @@ footer{background:var(--text-dark);color:rgba(255,255,255,0.6);text-align:center
   .hero{padding:80px 0 64px;}
   .price-card.recommended{transform:none;}
 }
+
+/* ===== Demo Form ===== */
+.demo-form-card{background:rgba(255,255,255,0.12);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.2);border-radius:16px;padding:40px;max-width:520px;margin:0 auto;text-align:left;}
+.demo-form-card h3{font-size:20px;font-weight:800;text-align:center;margin-bottom:6px;color:#fff;}
+.demo-form-card .form-sub{font-size:14px;color:rgba(255,255,255,0.7);text-align:center;margin-bottom:24px;}
+.demo-form-card label{display:block;font-size:13px;font-weight:600;margin-bottom:6px;color:rgba(255,255,255,0.9);}
+.demo-form-card label .req{color:#fbbf24;margin-left:4px;font-size:11px;}
+.demo-form-card input,.demo-form-card textarea{width:100%;padding:12px 14px;border:1px solid rgba(255,255,255,0.3);border-radius:10px;background:rgba(255,255,255,0.1);color:#fff;font-size:15px;font-family:inherit;margin-bottom:16px;outline:none;transition:border 0.2s;}
+.demo-form-card input::placeholder,.demo-form-card textarea::placeholder{color:rgba(255,255,255,0.4);}
+.demo-form-card input:focus,.demo-form-card textarea:focus{border-color:#fbbf24;}
+.demo-form-card textarea{resize:vertical;min-height:60px;}
+.demo-form-btn{width:100%;padding:16px;background:#fbbf24;color:#1e293b;border:none;border-radius:12px;font-size:16px;font-weight:800;cursor:pointer;transition:all 0.2s;font-family:inherit;}
+.demo-form-btn:hover{background:#f59e0b;transform:translateY(-1px);}
+.demo-form-btn:disabled{opacity:0.6;cursor:not-allowed;transform:none;}
+.demo-success{text-align:center;padding:20px 0;}
+.demo-success .check{font-size:48px;margin-bottom:12px;}
+.demo-success h3{font-size:20px;font-weight:800;color:#fff;margin-bottom:8px;}
+.demo-success p{font-size:14px;color:rgba(255,255,255,0.8);margin-bottom:24px;line-height:1.7;}
+.demo-success .demo-link{display:inline-block;background:#fff;color:#1e40af;padding:16px 40px;border-radius:50px;font-size:16px;font-weight:700;text-decoration:none;transition:all 0.2s;}
+.demo-success .demo-link:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,0.2);}
+
 </style>
 </head>
 <body>
@@ -138,7 +159,7 @@ footer{background:var(--text-dark);color:rgba(255,255,255,0.6);text-align:center
     <div class="hero-label">飲食店向け AI リピート自動化ツール</div>
     <h1>飽きない商いを、<span>AIがつくる。</span></h1>
     <p class="hero-sub">LINE連携 × AI で、お客様のリピートを自動化する<br>飲食店向けオールインワンツール</p>
-    <a href="#contact" class="hero-cta">まずは無料で相談する →</a>
+    <a href="#contact" class="hero-cta">無料デモを体験する</a>
   </div>
 </section>
 
@@ -397,27 +418,78 @@ footer{background:var(--text-dark);color:rgba(255,255,255,0.6);text-align:center
 <!-- ===== CTA ===== -->
 <section class="cta-section" id="contact">
   <div class="container">
-    <h2>まずはお気軽にご相談ください</h2>
-    <p>先着20名様限定で、初期費用0円キャンペーン実施中</p>
-    <div class="cta-contacts">
-      <div class="cta-card">
-        <div class="icon">📱</div>
-        <h3>LINEでお問い合わせ</h3>
-        <p>QRコードをここに配置</p>
-      </div>
-      <div class="cta-card">
-        <div class="icon">✉️</div>
-        <h3>メールでお問い合わせ</h3>
-        <p>example@akinai-ai.com</p>
-      </div>
-      <div class="cta-card">
-        <div class="icon">📞</div>
-        <h3>お電話でお問い合わせ</h3>
-        <p>000-0000-0000</p>
+    <h2>無料デモを体験してみませんか？</h2>
+    <p>下記をご入力いただくと、すぐにデモ画面をお試しいただけます</p>
+
+    <div class="demo-form-card" id="demo-form-card">
+      <h3>🎯 デモ体験お申し込み</h3>
+      <p class="form-sub">所要時間：約30秒</p>
+
+      <form id="demo-form" onsubmit="submitDemoForm(event)">
+        <label>店舗名<span class="req">必須</span></label>
+        <input type="text" id="f-shop" placeholder="例：Bar Akinai" required>
+
+        <label>お名前<span class="req">必須</span></label>
+        <input type="text" id="f-name" placeholder="例：山田 太郎" required>
+
+        <label>電話番号<span class="req">必須</span></label>
+        <input type="tel" id="f-phone" placeholder="例：090-1234-5678" required>
+
+        <label>メールアドレス<span class="req">必須</span></label>
+        <input type="email" id="f-email" placeholder="例：info@example.com" required>
+
+        <label>ご質問・ご要望<span style="color:rgba(255,255,255,0.5);margin-left:4px;font-size:11px;">任意</span></label>
+        <textarea id="f-note" rows="2" placeholder="気になっていることがあればお書きください"></textarea>
+
+        <button type="submit" class="demo-form-btn" id="demo-submit-btn">デモを体験する →</button>
+      </form>
+    </div>
+
+    <!-- 送信完了後に表示 -->
+    <div class="demo-form-card" id="demo-success" style="display:none;">
+      <div class="demo-success">
+        <div class="check">✅</div>
+        <h3>お申し込みありがとうございます！</h3>
+        <p>下のボタンからデモ画面をお試しください。<br>実際の注文体験・AIソムリエ・味覚診断をお試しいただけます。</p>
+        <a href="https://app.akinai.allbrain.one" target="_blank" class="demo-link">🚀 デモを体験する</a>
       </div>
     </div>
+
   </div>
 </section>
+
+<script>
+function submitDemoForm(e) {
+  e.preventDefault();
+  var btn = document.getElementById('demo-submit-btn');
+  btn.disabled = true;
+  btn.textContent = '送信中...';
+
+  var data = {
+    shopName: document.getElementById('f-shop').value,
+    name: document.getElementById('f-name').value,
+    phone: document.getElementById('f-phone').value,
+    email: document.getElementById('f-email').value,
+    note: document.getElementById('f-note').value
+  };
+
+  fetch('https://script.google.com/macros/s/AKfycbxfsdTW4RJGQ5Xhst1pYCwEwmto0VeijNNmT2onac0ld0pPxvSiKnsTglJs08rGP2KD/exec', {
+    method: 'POST',
+    mode: 'no-cors',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data)
+  })
+  .then(function() {
+    document.getElementById('demo-form-card').style.display = 'none';
+    document.getElementById('demo-success').style.display = 'block';
+  })
+  .catch(function() {
+    document.getElementById('demo-form-card').style.display = 'none';
+    document.getElementById('demo-success').style.display = 'block';
+  });
+}
+</script>
+
 
 <!-- ===== Footer ===== -->
 <footer>
