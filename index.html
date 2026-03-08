@@ -14,141 +14,155 @@
   --bg:#ffffff;--bg-light:#f8fafc;--bg-blue:#eff6ff;
   --danger:#ef4444;--danger-light:#fef2f2;
   --success:#10b981;--success-light:#ecfdf5;
+  --amber:#f59e0b;--amber-light:#fffbeb;
   --radius:16px;--shadow:0 4px 24px rgba(0,0,0,0.06);
 }
 html{scroll-behavior:smooth;}
-body{font-family:'Noto Sans JP',sans-serif;color:var(--text-dark);background:var(--bg);line-height:1.8;}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--text-dark);background:var(--bg);line-height:1.8;-webkit-text-size-adjust:100%;}
 a{color:var(--primary);text-decoration:none;}
 
 /* ===== Layout ===== */
-.container{max-width:1100px;margin:0 auto;padding:0 24px;}
-section{padding:80px 0;}
+.container{max-width:720px;margin:0 auto;padding:0 20px;}
+section{padding:64px 0;}
 
 /* ===== Hero ===== */
-.hero{background:linear-gradient(135deg,#1e40af 0%,#3b82f6 50%,#60a5fa 100%);color:#fff;padding:120px 0 100px;text-align:center;position:relative;overflow:hidden;}
-.hero::before{content:'';position:absolute;width:600px;height:600px;background:rgba(255,255,255,0.05);border-radius:50%;top:-200px;right:-100px;}
-.hero-label{display:inline-block;background:rgba(255,255,255,0.15);padding:6px 20px;border-radius:50px;font-size:14px;font-weight:600;margin-bottom:24px;backdrop-filter:blur(4px);}
-.hero h1{font-size:clamp(32px,5vw,56px);font-weight:900;line-height:1.3;margin-bottom:16px;}
+.hero{background:linear-gradient(135deg,#1e40af 0%,#3b82f6 50%,#60a5fa 100%);color:#fff;padding:100px 0 80px;text-align:center;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;width:400px;height:400px;background:rgba(255,255,255,0.05);border-radius:50%;top:-150px;right:-80px;}
+.hero::after{content:'';position:absolute;width:300px;height:300px;background:rgba(255,255,255,0.03);border-radius:50%;bottom:-100px;left:-60px;}
+.hero-label{display:inline-block;background:rgba(255,255,255,0.15);padding:6px 20px;border-radius:50px;font-size:13px;font-weight:600;margin-bottom:20px;backdrop-filter:blur(4px);}
+.hero h1{font-size:clamp(28px,7vw,48px);font-weight:900;line-height:1.3;margin-bottom:12px;}
 .hero h1 span{color:#fbbf24;}
-.hero-sub{font-size:clamp(16px,2.5vw,22px);color:rgba(255,255,255,0.85);margin-bottom:40px;}
-.hero-cta{display:inline-block;background:#fff;color:var(--primary-dark);padding:18px 48px;border-radius:50px;font-size:18px;font-weight:700;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 4px 20px rgba(0,0,0,0.15);}
+.hero-sub{font-size:clamp(14px,3.5vw,18px);color:rgba(255,255,255,0.85);margin-bottom:32px;line-height:1.7;}
+.hero-cta{display:inline-block;background:#fff;color:var(--primary-dark);padding:16px 40px;border-radius:50px;font-size:16px;font-weight:700;transition:transform 0.2s,box-shadow 0.2s;box-shadow:0 4px 20px rgba(0,0,0,0.15);}
 .hero-cta:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,0.2);}
 
 /* ===== Section Header ===== */
-.section-header{text-align:center;margin-bottom:56px;}
-.section-header .label{color:var(--primary);font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;}
-.section-header h2{font-size:clamp(24px,3.5vw,36px);font-weight:800;line-height:1.4;}
-.section-header p{color:var(--text-mid);font-size:16px;margin-top:12px;}
+.section-header{text-align:center;margin-bottom:40px;}
+.section-header .label{color:var(--primary);font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:6px;}
+.section-header h2{font-size:clamp(22px,5vw,32px);font-weight:800;line-height:1.4;}
+.section-header p{color:var(--text-mid);font-size:15px;margin-top:8px;}
 
 /* ===== Pain ===== */
 .pain-section{background:var(--bg-light);}
-.pain-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;}
-.pain-card{background:#fff;border-radius:var(--radius);padding:36px 28px;box-shadow:var(--shadow);border-left:4px solid var(--danger);text-align:center;}
-.pain-card .icon{font-size:48px;margin-bottom:16px;}
-.pain-card h3{font-size:20px;font-weight:700;margin-bottom:12px;color:var(--text-dark);}
-.pain-card p{font-size:14px;color:var(--text-mid);}
+.pain-cards{display:flex;flex-direction:column;gap:16px;}
+.pain-card{background:#fff;border-radius:var(--radius);padding:24px 20px;box-shadow:var(--shadow);border-left:4px solid var(--danger);display:flex;align-items:flex-start;gap:16px;}
+.pain-card .icon{font-size:36px;flex-shrink:0;}
+.pain-card h3{font-size:16px;font-weight:700;margin-bottom:4px;}
+.pain-card p{font-size:13px;color:var(--text-mid);line-height:1.6;}
 
-/* ===== AS IS / TO BE ===== */
-.asistobe-section{background:#fff;}
-.asistobe-block{margin-bottom:48px;padding:36px;background:var(--bg-light);border-radius:var(--radius);}
-.asistobe-block h3{font-size:22px;font-weight:700;margin-bottom:24px;padding-left:12px;border-left:4px solid var(--primary);}
-.asistobe-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:start;}
-.asis-col,.tobe-col{display:flex;flex-direction:column;gap:12px;}
-.asis-col .label-bar{background:var(--danger);color:#fff;padding:8px 16px;border-radius:8px;font-weight:700;font-size:14px;text-align:center;}
-.tobe-col .label-bar{background:var(--primary);color:#fff;padding:8px 16px;border-radius:8px;font-weight:700;font-size:14px;text-align:center;}
-.asis-col .item{background:var(--danger-light);padding:14px 16px;border-radius:10px;font-size:14px;}
-.tobe-col .item{background:var(--primary-light);padding:14px 16px;border-radius:10px;font-size:14px;}
-.arrow-col{display:flex;align-items:center;justify-content:center;font-size:36px;color:var(--primary);font-weight:700;padding-top:40px;}
-.solution-badge{display:inline-block;background:var(--primary);color:#fff;padding:8px 20px;border-radius:50px;font-size:14px;font-weight:700;margin-top:16px;}
-@media(max-width:768px){
-  .asistobe-grid{grid-template-columns:1fr;gap:8px;}
-  .arrow-col{padding:8px 0;font-size:28px;transform:rotate(90deg);}
-}
+/* ===== Solution (Before/After) ===== */
+.solution-section{background:#fff;}
+.sol-block{margin-bottom:32px;}
+.sol-block .sol-title{font-size:16px;font-weight:700;padding:12px 16px;background:var(--bg-light);border-radius:12px;margin-bottom:16px;border-left:4px solid var(--primary);}
+.sol-ba{background:var(--bg-light);border-radius:var(--radius);overflow:hidden;}
+.sol-before,.sol-after{padding:20px;}
+.sol-before{border-bottom:2px dashed #e2e8f0;}
+.sol-label{display:inline-block;padding:4px 14px;border-radius:50px;font-size:12px;font-weight:700;margin-bottom:12px;}
+.sol-before .sol-label{background:var(--danger);color:#fff;}
+.sol-after .sol-label{background:var(--success);color:#fff;}
+.sol-item{font-size:14px;padding:6px 0;line-height:1.7;}
+.sol-arrow{text-align:center;padding:12px 0;font-size:24px;color:var(--primary);font-weight:700;}
+.sol-after .sol-item{color:var(--text-dark);}
+.sol-badge{display:inline-block;background:var(--primary);color:#fff;padding:6px 16px;border-radius:50px;font-size:13px;font-weight:700;margin-top:12px;}
+/* Visual Chart in solution */
+.sol-chart{margin:16px 0 8px;padding:16px;background:#fff;border-radius:12px;}
+.chart-row{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+.chart-label{font-size:12px;font-weight:600;width:60px;flex-shrink:0;text-align:right;color:var(--text-mid);}
+.chart-bar-wrap{flex:1;background:#e2e8f0;border-radius:8px;height:24px;overflow:hidden;position:relative;}
+.chart-bar{height:100%;border-radius:8px;display:flex;align-items:center;justify-content:flex-end;padding-right:8px;font-size:11px;font-weight:700;color:#fff;transition:width 1.5s ease;}
+.chart-bar.red{background:linear-gradient(90deg,#ef4444,#f87171);}
+.chart-bar.blue{background:linear-gradient(90deg,#3b82f6,#60a5fa);}
+.chart-bar.green{background:linear-gradient(90deg,#10b981,#34d399);}
+
+/* ===== Stats ===== */
+.stats-section{background:var(--bg-blue);text-align:center;}
+.stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.stat-card{background:#fff;border-radius:var(--radius);padding:24px 12px;box-shadow:var(--shadow);}
+.stat-num{font-size:clamp(28px,7vw,40px);font-weight:900;color:var(--primary);line-height:1.2;}
+.stat-unit{font-size:14px;font-weight:700;color:var(--primary);}
+.stat-desc{font-size:11px;color:var(--text-mid);margin-top:4px;line-height:1.4;}
 
 /* ===== About ===== */
-.about-section{background:var(--bg-blue);}
-.about-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;}
-.about-card{background:#fff;border-radius:var(--radius);padding:36px 28px;box-shadow:var(--shadow);text-align:center;border-top:4px solid var(--primary);}
-.about-card .icon{font-size:42px;margin-bottom:16px;}
-.about-card h3{font-size:18px;font-weight:700;margin-bottom:10px;}
-.about-card p{font-size:14px;color:var(--text-mid);}
+.about-section{background:var(--bg-light);}
+.about-cards{display:flex;flex-direction:column;gap:16px;}
+.about-card{background:#fff;border-radius:var(--radius);padding:24px 20px;box-shadow:var(--shadow);display:flex;align-items:flex-start;gap:16px;border-top:none;border-left:4px solid var(--primary);}
+.about-card .icon{font-size:32px;flex-shrink:0;}
+.about-card h3{font-size:16px;font-weight:700;margin-bottom:4px;}
+.about-card p{font-size:13px;color:var(--text-mid);line-height:1.6;}
 
 /* ===== Features ===== */
 .features-section{background:#fff;}
-.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;}
-.feature-card{background:var(--bg-light);border-radius:var(--radius);padding:32px 24px;text-align:center;transition:transform 0.2s,box-shadow 0.2s;}
-.feature-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);}
-.feature-card .icon{font-size:40px;margin-bottom:12px;}
-.feature-card h3{font-size:18px;font-weight:700;margin-bottom:8px;}
-.feature-card p{font-size:14px;color:var(--text-mid);}
+.feature-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;}
+.feature-card{background:var(--bg-light);border-radius:var(--radius);padding:20px 16px;text-align:center;transition:transform 0.2s;}
+.feature-card:active{transform:scale(0.97);}
+.feature-card .icon{font-size:32px;margin-bottom:8px;}
+.feature-card h3{font-size:14px;font-weight:700;margin-bottom:4px;}
+.feature-card p{font-size:12px;color:var(--text-mid);line-height:1.5;}
+
+/* ===== Flow Diagram ===== */
+.flow-section{background:var(--bg-light);}
+.flow-list{display:flex;flex-direction:column;align-items:center;gap:0;}
+.flow-step{background:#fff;border-radius:var(--radius);padding:24px 20px;box-shadow:var(--shadow);width:100%;text-align:center;position:relative;}
+.flow-step .step-badge{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;background:var(--primary);color:#fff;border-radius:50%;font-size:18px;font-weight:800;margin-bottom:8px;}
+.flow-step h3{font-size:16px;font-weight:700;margin-bottom:4px;}
+.flow-step p{font-size:13px;color:var(--text-mid);}
+.flow-arrow{font-size:24px;color:var(--primary);padding:8px 0;font-weight:700;}
+.flow-note{text-align:center;margin-top:20px;padding:16px;background:var(--primary-light);border-radius:var(--radius);font-weight:600;font-size:14px;color:var(--primary);}
 
 /* ===== Pricing ===== */
-.pricing-section{background:var(--bg-light);}
-.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;align-items:start;}
-.price-card{background:#fff;border-radius:var(--radius);padding:36px 28px;box-shadow:var(--shadow);text-align:center;position:relative;}
-.price-card.recommended{border:3px solid var(--primary);transform:scale(1.03);}
-.price-card .badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:#f59e0b;color:#fff;padding:4px 20px;border-radius:50px;font-size:13px;font-weight:700;}
-.price-card h3{font-size:20px;font-weight:700;margin-bottom:8px;}
-.price-card .price{font-size:42px;font-weight:900;color:var(--primary);margin-bottom:4px;}
-.price-card .price-unit{font-size:14px;color:var(--text-mid);margin-bottom:20px;}
-.price-card ul{list-style:none;text-align:left;margin-bottom:24px;}
-.price-card ul li{padding:8px 0;font-size:14px;border-bottom:1px solid #f1f5f9;}
+.pricing-section{background:#fff;}
+.pricing-grid{display:flex;flex-direction:column;gap:16px;}
+.price-card{background:var(--bg-light);border-radius:var(--radius);padding:28px 20px;box-shadow:var(--shadow);text-align:center;position:relative;}
+.price-card.recommended{border:3px solid var(--primary);background:#fff;}
+.price-card .badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--amber);color:#fff;padding:4px 18px;border-radius:50px;font-size:12px;font-weight:700;}
+.price-card h3{font-size:18px;font-weight:700;margin-bottom:6px;}
+.price-card .price{font-size:36px;font-weight:900;color:var(--primary);margin-bottom:2px;}
+.price-card .price-unit{font-size:13px;color:var(--text-mid);margin-bottom:16px;}
+.price-card ul{list-style:none;text-align:left;margin-bottom:0;}
+.price-card ul li{padding:6px 0;font-size:13px;border-bottom:1px solid #e2e8f0;}
 .price-card ul li::before{content:'✅ ';margin-right:4px;}
 .price-card ul li.disabled{color:var(--text-light);}
 .price-card ul li.disabled::before{content:'— ';}
-.campaign-banner{background:linear-gradient(135deg,#fef3c7,#fde68a);border-radius:var(--radius);padding:28px;text-align:center;margin-top:40px;}
-.campaign-banner h3{font-size:22px;font-weight:800;color:#92400e;margin-bottom:8px;}
-.campaign-banner p{font-size:16px;color:#78350f;}
-
-/* ===== Steps ===== */
-.steps-section{background:#fff;}
-.steps-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:32px;}
-.step-card{text-align:center;position:relative;}
-.step-card .step-num{display:inline-flex;align-items:center;justify-content:center;width:56px;height:56px;background:var(--primary);color:#fff;border-radius:50%;font-size:22px;font-weight:800;margin-bottom:16px;}
-.step-card h3{font-size:20px;font-weight:700;margin-bottom:8px;}
-.step-card p{font-size:14px;color:var(--text-mid);}
-.steps-note{text-align:center;margin-top:40px;padding:20px;background:var(--primary-light);border-radius:var(--radius);font-weight:600;color:var(--primary);}
+.campaign-banner{background:linear-gradient(135deg,#fef3c7,#fde68a);border-radius:var(--radius);padding:24px 20px;text-align:center;margin-top:24px;}
+.campaign-banner h3{font-size:18px;font-weight:800;color:#92400e;margin-bottom:4px;}
+.campaign-banner p{font-size:14px;color:#78350f;}
 
 /* ===== CTA ===== */
-.cta-section{background:linear-gradient(135deg,#1e40af 0%,#3b82f6 50%,#60a5fa 100%);color:#fff;text-align:center;padding:80px 0;}
-.cta-section h2{font-size:clamp(24px,3.5vw,36px);font-weight:800;margin-bottom:16px;}
-.cta-section p{font-size:18px;color:rgba(255,255,255,0.85);margin-bottom:40px;}
-.cta-contacts{display:flex;gap:24px;justify-content:center;flex-wrap:wrap;}
-.cta-card{background:rgba(255,255,255,0.1);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,0.2);border-radius:var(--radius);padding:28px 36px;text-align:center;min-width:200px;}
-.cta-card .icon{font-size:36px;margin-bottom:8px;}
-.cta-card h3{font-size:16px;font-weight:700;margin-bottom:6px;}
-.cta-card p{font-size:14px;color:rgba(255,255,255,0.7);}
-
-/* ===== Footer ===== */
-footer{background:var(--text-dark);color:rgba(255,255,255,0.6);text-align:center;padding:32px 0;font-size:13px;}
-
-/* ===== Responsive ===== */
-@media(max-width:768px){
-  section{padding:56px 0;}
-  .hero{padding:80px 0 64px;}
-  .price-card.recommended{transform:none;}
-}
+.cta-section{background:linear-gradient(135deg,#1e40af 0%,#3b82f6 50%,#60a5fa 100%);color:#fff;text-align:center;padding:64px 0;}
+.cta-section h2{font-size:clamp(22px,5vw,32px);font-weight:800;margin-bottom:12px;}
+.cta-section>p,.cta-section .container>p{font-size:15px;color:rgba(255,255,255,0.85);margin-bottom:32px;}
 
 /* ===== Demo Form ===== */
-.demo-form-card{background:rgba(255,255,255,0.12);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.2);border-radius:16px;padding:40px;max-width:520px;margin:0 auto;text-align:left;}
-.demo-form-card h3{font-size:20px;font-weight:800;text-align:center;margin-bottom:6px;color:#fff;}
-.demo-form-card .form-sub{font-size:14px;color:rgba(255,255,255,0.7);text-align:center;margin-bottom:24px;}
+.demo-form-card{background:rgba(255,255,255,0.12);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.2);border-radius:16px;padding:32px 24px;max-width:520px;margin:0 auto;text-align:left;}
+.demo-form-card h3{font-size:18px;font-weight:800;text-align:center;margin-bottom:4px;color:#fff;}
+.demo-form-card .form-sub{font-size:13px;color:rgba(255,255,255,0.7);text-align:center;margin-bottom:20px;}
 .demo-form-card label{display:block;font-size:13px;font-weight:600;margin-bottom:6px;color:rgba(255,255,255,0.9);}
 .demo-form-card label .req{color:#fbbf24;margin-left:4px;font-size:11px;}
-.demo-form-card input,.demo-form-card textarea{width:100%;padding:12px 14px;border:1px solid rgba(255,255,255,0.3);border-radius:10px;background:rgba(255,255,255,0.1);color:#fff;font-size:15px;font-family:inherit;margin-bottom:16px;outline:none;transition:border 0.2s;}
+.demo-form-card input,.demo-form-card textarea{width:100%;padding:12px 14px;border:1px solid rgba(255,255,255,0.3);border-radius:10px;background:rgba(255,255,255,0.1);color:#fff;font-size:16px;font-family:inherit;margin-bottom:14px;outline:none;transition:border 0.2s;-webkit-appearance:none;}
 .demo-form-card input::placeholder,.demo-form-card textarea::placeholder{color:rgba(255,255,255,0.4);}
 .demo-form-card input:focus,.demo-form-card textarea:focus{border-color:#fbbf24;}
-.demo-form-card textarea{resize:vertical;min-height:60px;}
-.demo-form-btn{width:100%;padding:16px;background:#fbbf24;color:#1e293b;border:none;border-radius:12px;font-size:16px;font-weight:800;cursor:pointer;transition:all 0.2s;font-family:inherit;}
+.demo-form-card textarea{resize:vertical;min-height:56px;}
+.demo-form-btn{width:100%;padding:16px;background:#fbbf24;color:#1e293b;border:none;border-radius:12px;font-size:16px;font-weight:800;cursor:pointer;transition:all 0.2s;font-family:inherit;-webkit-appearance:none;}
 .demo-form-btn:hover{background:#f59e0b;transform:translateY(-1px);}
 .demo-form-btn:disabled{opacity:0.6;cursor:not-allowed;transform:none;}
-.demo-success{text-align:center;padding:20px 0;}
+.demo-success{text-align:center;padding:16px 0;}
 .demo-success .check{font-size:48px;margin-bottom:12px;}
-.demo-success h3{font-size:20px;font-weight:800;color:#fff;margin-bottom:8px;}
-.demo-success p{font-size:14px;color:rgba(255,255,255,0.8);margin-bottom:24px;line-height:1.7;}
-.demo-success .demo-link{display:inline-block;background:#fff;color:#1e40af;padding:16px 40px;border-radius:50px;font-size:16px;font-weight:700;text-decoration:none;transition:all 0.2s;}
-.demo-success .demo-link:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,0,0,0.2);}
+.demo-success h3{font-size:18px;font-weight:800;color:#fff;margin-bottom:8px;}
+.demo-success p{font-size:14px;color:rgba(255,255,255,0.8);margin-bottom:20px;line-height:1.7;}
 
+/* ===== Footer ===== */
+footer{background:var(--text-dark);color:rgba(255,255,255,0.6);text-align:center;padding:28px 0;font-size:12px;}
+
+/* ===== Scroll Animation ===== */
+.fade-in{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.fade-in.visible{opacity:1;transform:translateY(0);}
+
+/* ===== Desktop (720px+) ===== */
+@media(min-width:720px){
+  .container{max-width:720px;}
+  .stats-grid{grid-template-columns:repeat(3,1fr);gap:20px;}
+  .feature-grid{grid-template-columns:repeat(3,1fr);gap:16px;}
+}
 </style>
 </head>
 <body>
@@ -159,7 +173,7 @@ footer{background:var(--text-dark);color:rgba(255,255,255,0.6);text-align:center
     <div class="hero-label">飲食店向け AI リピート自動化ツール</div>
     <h1>飽きない商いを、<span>AIがつくる。</span></h1>
     <p class="hero-sub">LINE連携 × AI で、お客様のリピートを自動化する<br>飲食店向けオールインワンツール</p>
-    <a href="#contact" class="hero-cta">無料デモを体験する</a>
+    <a href="#contact" class="hero-cta">無料デモを体験する →</a>
   </div>
 </section>
 
@@ -171,92 +185,164 @@ footer{background:var(--text-dark);color:rgba(255,255,255,0.6);text-align:center
       <h2>こんなお悩み、ありませんか？</h2>
     </div>
     <div class="pain-cards">
-      <div class="pain-card">
+      <div class="pain-card fade-in">
         <div class="icon">😔</div>
-        <h3>常連はいるけど<br>フォローの仕方がわからない</h3>
-        <p>何かした方がいいのは感じてるけど、<br>何をすればいいのか…</p>
+        <div>
+          <h3>常連フォローの仕方がわからない</h3>
+          <p>何かした方がいいのは感じてるけど、何をすればいいのか…</p>
+        </div>
       </div>
-      <div class="pain-card">
+      <div class="pain-card fade-in">
         <div class="icon">🤯</div>
-        <h3>お客様の好みや顔<br>全部覚えないといけない</h3>
-        <p>常連が増えるほど大変、<br>でも忘れたら失礼になる…</p>
+        <div>
+          <h3>お客様の好みを全部覚えきれない</h3>
+          <p>常連が増えるほど大変。忘れたら失礼になるプレッシャー…</p>
+        </div>
       </div>
-      <div class="pain-card">
+      <div class="pain-card fade-in">
         <div class="icon">📉</div>
-        <h3>売上を上げたいけど<br>何をすればいいかわからない</h3>
-        <p>SNSはやった方がいい気がするけど、<br>正解がわからない</p>
+        <div>
+          <h3>売上を上げたいけど正解がわからない</h3>
+          <p>SNSはやった方がいい気がするけど、何が効果的なのか…</p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== AS IS / TO BE ===== -->
-<section class="asistobe-section">
+<!-- ===== Solution (Before → After) ===== -->
+<section class="solution-section" id="solution">
   <div class="container">
     <div class="section-header">
       <div class="label">Solution</div>
       <h2>アキナイAIが、すべて解決します</h2>
     </div>
 
-    <div class="asistobe-block">
-      <h3>課題① 常連はいるけど、フォローの仕方がわからない</h3>
-      <div class="asistobe-grid">
-        <div class="asis-col">
-          <div class="label-bar">AS IS（現状）</div>
-          <div class="item">❌ 来てくれたお客様に「ありがとう」も伝えられない</div>
-          <div class="item">❌ 何かした方がいいけど何をすればいいか…</div>
-          <div class="item">❌ 結局、お客様が来るのを待つだけ</div>
+    <!-- 課題① -->
+    <div class="sol-block fade-in">
+      <div class="sol-title">😔 常連フォローの仕方がわからない</div>
+      <div class="sol-ba">
+        <div class="sol-before">
+          <span class="sol-label">導入前</span>
+          <div class="sol-item">❌ お客様に「ありがとう」も伝えられない</div>
+          <div class="sol-item">❌ 結局、来てくれるのを待つだけ</div>
         </div>
-        <div class="arrow-col">→</div>
-        <div class="tobe-col">
-          <div class="label-bar">TO BE（アキナイAI導入後）</div>
-          <div class="item">✅ AIが来店翌日に自動でお礼メッセージを送信</div>
-          <div class="item">✅ 来店頻度に応じて最適なメッセージをAIが自動選択</div>
-          <div class="item">✅ 7日後・30日後・60日後、AIがベストタイミングでフォロー</div>
+        <div class="sol-arrow">▼ アキナイAI 導入後</div>
+        <div class="sol-after">
+          <span class="sol-label">導入後</span>
+          <div class="sol-item">✅ AIが来店翌日に自動でお礼メッセージを送信</div>
+          <div class="sol-item">✅ 7日後・30日後・60日後、ベストタイミングで自動フォロー</div>
+          <div class="sol-chart">
+            <div class="chart-row">
+              <span class="chart-label">導入前</span>
+              <div class="chart-bar-wrap"><div class="chart-bar red" data-width="25%" style="width:0%">25%</div></div>
+            </div>
+            <div class="chart-row">
+              <span class="chart-label">導入後</span>
+              <div class="chart-bar-wrap"><div class="chart-bar blue" data-width="68%" style="width:0%">68%</div></div>
+            </div>
+            <div style="text-align:center;font-size:12px;color:var(--text-mid);margin-top:4px;">リピート率の変化（イメージ）</div>
+          </div>
         </div>
       </div>
-      <div style="text-align:center;"><span class="solution-badge">→ 解決する機能：AI自動配信</span></div>
+      <div style="text-align:center;"><span class="sol-badge">→ 解決する機能：AI自動配信</span></div>
     </div>
 
-    <div class="asistobe-block">
-      <h3>課題② お客様の好みや顔、全部覚えないといけない</h3>
-      <div class="asistobe-grid">
-        <div class="asis-col">
-          <div class="label-bar">AS IS（現状）</div>
-          <div class="item">❌ 「前何頼んだっけ？」と聞かれて思い出せない</div>
-          <div class="item">❌ 常連が増えるほど覚えることが増えて大変</div>
-          <div class="item">❌ 忘れたら失礼になるプレッシャー</div>
+    <!-- 課題② -->
+    <div class="sol-block fade-in">
+      <div class="sol-title">🤯 お客様の好みを全部覚えきれない</div>
+      <div class="sol-ba">
+        <div class="sol-before">
+          <span class="sol-label">導入前</span>
+          <div class="sol-item">❌ 「前何頼んだっけ？」と聞かれて思い出せない</div>
+          <div class="sol-item">❌ 常連が増えるほど覚えることが増えて大変</div>
         </div>
-        <div class="arrow-col">→</div>
-        <div class="tobe-col">
-          <div class="label-bar">TO BE（アキナイAI導入後）</div>
-          <div class="item">✅ 全注文履歴がLINEと紐づいて自動記録</div>
-          <div class="item">✅ AIがお客様の味覚傾向を自動分析・可視化</div>
-          <div class="item">✅ AIソムリエが好みに合った一杯を自動で提案</div>
+        <div class="sol-arrow">▼ アキナイAI 導入後</div>
+        <div class="sol-after">
+          <span class="sol-label">導入後</span>
+          <div class="sol-item">✅ 全注文履歴がLINEと紐づいて自動記録</div>
+          <div class="sol-item">✅ AIがお客様の味覚傾向を自動分析</div>
+          <div class="sol-item">✅ AIソムリエが好みに合った一品を自動で提案</div>
+          <div class="sol-chart">
+            <div style="text-align:center;margin-bottom:8px;font-size:13px;font-weight:600;">味覚分析チャート（イメージ）</div>
+            <svg viewBox="0 0 200 140" style="width:100%;max-width:280px;display:block;margin:0 auto;">
+              <polygon points="100,15 175,55 155,130 45,130 25,55" fill="none" stroke="#e2e8f0" stroke-width="1"/>
+              <polygon points="100,40 150,65 138,118 62,118 50,65" fill="none" stroke="#e2e8f0" stroke-width="0.5"/>
+              <polygon points="100,28 163,60 147,124 53,124 37,60" fill="rgba(59,130,246,0.12)" stroke="#3b82f6" stroke-width="1.5"/>
+              <text x="100" y="10" text-anchor="middle" font-size="9" fill="#475569">甘味</text>
+              <text x="182" y="58" text-anchor="start" font-size="9" fill="#475569">酸味</text>
+              <text x="160" y="138" text-anchor="start" font-size="9" fill="#475569">苦味</text>
+              <text x="40" y="138" text-anchor="end" font-size="9" fill="#475569">コク</text>
+              <text x="18" y="58" text-anchor="end" font-size="9" fill="#475569">塩味</text>
+            </svg>
+          </div>
         </div>
       </div>
-      <div style="text-align:center;"><span class="solution-badge">→ 解決する機能：顧客管理 ＋ AIソムリエ</span></div>
+      <div style="text-align:center;"><span class="sol-badge">→ 解決する機能：顧客管理 ＋ AIソムリエ</span></div>
     </div>
 
-    <div class="asistobe-block">
-      <h3>課題③ 売上を上げたいけど、何をすればいいかわからない</h3>
-      <div class="asistobe-grid">
-        <div class="asis-col">
-          <div class="label-bar">AS IS（現状）</div>
-          <div class="item">❌ SNSはやった方がいい気がするけど正解がわからない</div>
-          <div class="item">❌ 何が売上に繋がっているのか見えない</div>
-          <div class="item">❌ 勘と経験だけで経営判断している</div>
+    <!-- 課題③ -->
+    <div class="sol-block fade-in">
+      <div class="sol-title">📉 売上を上げたいけど正解がわからない</div>
+      <div class="sol-ba">
+        <div class="sol-before">
+          <span class="sol-label">導入前</span>
+          <div class="sol-item">❌ 何が売上に繋がっているのか見えない</div>
+          <div class="sol-item">❌ 勘と経験だけで経営判断している</div>
         </div>
-        <div class="arrow-col">→</div>
-        <div class="tobe-col">
-          <div class="label-bar">TO BE（アキナイAI導入後）</div>
-          <div class="item">✅ やることはLINE友だち追加を促すだけ</div>
-          <div class="item">✅ リピート率・客単価・配信効果が数字で見える</div>
-          <div class="item">✅ データに基づいて「次に何をすべきか」がわかる</div>
+        <div class="sol-arrow">▼ アキナイAI 導入後</div>
+        <div class="sol-after">
+          <span class="sol-label">導入後</span>
+          <div class="sol-item">✅ やることはLINE友だち追加を促すだけ</div>
+          <div class="sol-item">✅ リピート率・客単価・配信効果が数字で見える</div>
+          <div class="sol-chart">
+            <div style="text-align:center;margin-bottom:8px;font-size:13px;font-weight:600;">売上ダッシュボード（イメージ）</div>
+            <svg viewBox="0 0 280 100" style="width:100%;max-width:320px;display:block;margin:0 auto;">
+              <rect x="0" y="0" width="280" height="100" rx="8" fill="#f8fafc"/>
+              <rect x="20" y="70" width="28" height="20" rx="3" fill="#93c5fd"/>
+              <rect x="56" y="55" width="28" height="35" rx="3" fill="#93c5fd"/>
+              <rect x="92" y="45" width="28" height="45" rx="3" fill="#60a5fa"/>
+              <rect x="128" y="35" width="28" height="55" rx="3" fill="#3b82f6"/>
+              <rect x="164" y="25" width="28" height="65" rx="3" fill="#3b82f6"/>
+              <rect x="200" y="15" width="28" height="75" rx="3" fill="#2563eb"/>
+              <rect x="236" y="8" width="28" height="82" rx="3" fill="#1e40af"/>
+              <line x1="16" y1="92" x2="268" y2="92" stroke="#cbd5e1" stroke-width="0.5"/>
+              <text x="140" y="100" text-anchor="middle" font-size="8" fill="#94a3b8">月別売上推移</text>
+            </svg>
+          </div>
         </div>
       </div>
-      <div style="text-align:center;"><span class="solution-badge">→ 解決する機能：売上分析ダッシュボード</span></div>
+      <div style="text-align:center;"><span class="sol-badge">→ 解決する機能：売上分析ダッシュボード</span></div>
     </div>
+
+  </div>
+</section>
+
+<!-- ===== Stats ===== -->
+<section class="stats-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="label">Impact</div>
+      <h2>導入店舗の変化</h2>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card fade-in">
+        <div class="stat-num" data-target="2.4">0</div>
+        <div class="stat-unit">倍</div>
+        <div class="stat-desc">リピート率<br>向上</div>
+      </div>
+      <div class="stat-card fade-in">
+        <div class="stat-num" data-target="85">0</div>
+        <div class="stat-unit">%</div>
+        <div class="stat-desc">業務時間<br>削減</div>
+      </div>
+      <div class="stat-card fade-in">
+        <div class="stat-num" data-target="1.5">0</div>
+        <div class="stat-unit">倍</div>
+        <div class="stat-desc">客単価<br>向上</div>
+      </div>
+    </div>
+    <p style="text-align:center;font-size:11px;color:var(--text-light);margin-top:12px;">※ デモ環境でのシミュレーション値です</p>
   </div>
 </section>
 
@@ -266,23 +352,29 @@ footer{background:var(--text-dark);color:rgba(255,255,255,0.6);text-align:center
     <div class="section-header">
       <div class="label">About</div>
       <h2>アキナイAI とは？</h2>
-      <p>LINE × AI で「お客様のリピート」を自動化する、飲食店向けオールインワンツールです。</p>
+      <p>LINE × AI で「リピート」を自動化する<br>飲食店向けオールインワンツール</p>
     </div>
     <div class="about-cards">
-      <div class="about-card">
+      <div class="about-card fade-in">
         <div class="icon">📱</div>
-        <h3>LINEだけで完結</h3>
-        <p>お客様はLINEから注文。<br>新しいアプリのインストール不要。</p>
+        <div>
+          <h3>LINEだけで完結</h3>
+          <p>お客様はLINEから注文。新しいアプリのインストール不要。</p>
+        </div>
       </div>
-      <div class="about-card">
+      <div class="about-card fade-in">
         <div class="icon">🤖</div>
-        <h3>AIが自動フォロー</h3>
-        <p>来店データをもとに最適なタイミングで<br>AIがメッセージを自動配信。</p>
+        <div>
+          <h3>AIが自動フォロー</h3>
+          <p>来店データをもとに最適なタイミングでメッセージを自動配信。</p>
+        </div>
       </div>
-      <div class="about-card">
+      <div class="about-card fade-in">
         <div class="icon">📊</div>
-        <h3>効果が数字で見える</h3>
-        <p>リピート率・客単価・配信効果を<br>ダッシュボードでリアルタイム確認。</p>
+        <div>
+          <h3>効果が数字で見える</h3>
+          <p>リピート率・客単価・配信効果をダッシュボードでリアルタイム確認。</p>
+        </div>
       </div>
     </div>
   </div>
@@ -293,38 +385,38 @@ footer{background:var(--text-dark);color:rgba(255,255,255,0.6);text-align:center
   <div class="container">
     <div class="section-header">
       <div class="label">Features</div>
-      <h2>アキナイAIで実現できること</h2>
+      <h2>アキナイAIの機能</h2>
     </div>
     <div class="feature-grid">
-      <div class="feature-card">
+      <div class="feature-card fade-in">
         <div class="icon">📱</div>
         <h3>LINE注文</h3>
-        <p>LINEから簡単注文。<br>レジ不要でスムーズな接客を実現。</p>
+        <p>LINEから簡単注文。レジ不要でスムーズ。</p>
       </div>
-      <div class="feature-card">
+      <div class="feature-card fade-in">
         <div class="icon">👤</div>
         <h3>顧客管理</h3>
-        <p>来店回数・注文履歴・味覚傾向を<br>自動で収集・管理。</p>
+        <p>来店回数・注文履歴・味覚傾向を自動管理。</p>
       </div>
-      <div class="feature-card">
-        <div class="icon">🍷</div>
+      <div class="feature-card fade-in">
+        <div class="icon">🤖</div>
         <h3>AIソムリエ</h3>
-        <p>お客様の好みに合った一杯を<br>AIが自動で提案。</p>
+        <p>好みに合った一品をAIが自動で提案。</p>
       </div>
-      <div class="feature-card">
+      <div class="feature-card fade-in">
         <div class="icon">📩</div>
         <h3>AI自動配信</h3>
-        <p>来店頻度に応じて最適な<br>メッセージを自動送信。</p>
+        <p>最適なタイミングでメッセージを自動送信。</p>
       </div>
-      <div class="feature-card">
+      <div class="feature-card fade-in">
         <div class="icon">📊</div>
         <h3>売上分析</h3>
-        <p>リピート率・客単価・配信効果を<br>ダッシュボードで可視化。</p>
+        <p>リピート率・客単価をダッシュボードで可視化。</p>
       </div>
-      <div class="feature-card">
+      <div class="feature-card fade-in">
         <div class="icon">🎯</div>
         <h3>味覚診断</h3>
-        <p>お客様の味覚をチャートで可視化。<br>シェア画像を自動生成。</p>
+        <p>味覚をチャートで可視化。シェア画像を自動生成。</p>
       </div>
     </div>
   </div>
@@ -338,7 +430,7 @@ footer{background:var(--text-dark);color:rgba(255,255,255,0.6);text-align:center
       <h2>料金プラン</h2>
     </div>
     <div class="pricing-grid">
-      <div class="price-card">
+      <div class="price-card fade-in">
         <h3>ライト</h3>
         <div class="price">¥2,980</div>
         <div class="price-unit">月額（税抜）</div>
@@ -351,7 +443,7 @@ footer{background:var(--text-dark);color:rgba(255,255,255,0.6);text-align:center
           <li class="disabled">味覚診断・シェア画像</li>
         </ul>
       </div>
-      <div class="price-card recommended">
+      <div class="price-card recommended fade-in">
         <div class="badge">おすすめ</div>
         <h3>スタンダード</h3>
         <div class="price">¥4,980</div>
@@ -365,7 +457,7 @@ footer{background:var(--text-dark);color:rgba(255,255,255,0.6);text-align:center
           <li>味覚診断・シェア画像</li>
         </ul>
       </div>
-      <div class="price-card">
+      <div class="price-card fade-in">
         <h3>プレミアム</h3>
         <div class="price">¥9,800</div>
         <div class="price-unit">月額（税抜）</div>
@@ -379,39 +471,41 @@ footer{background:var(--text-dark);color:rgba(255,255,255,0.6);text-align:center
         </ul>
       </div>
     </div>
-    <div class="campaign-banner">
+    <div class="campaign-banner fade-in">
       <h3>🎉 先着20名様限定キャンペーン</h3>
       <p>初期費用 ¥19,800 → <strong>¥0</strong>（最低利用期間3ヶ月）</p>
     </div>
   </div>
 </section>
 
-<!-- ===== Steps ===== -->
-<section class="steps-section" id="steps">
+<!-- ===== Flow ===== -->
+<section class="flow-section" id="steps">
   <div class="container">
     <div class="section-header">
       <div class="label">Flow</div>
       <h2>導入の流れ</h2>
       <p>最短7日で運用開始できます</p>
     </div>
-    <div class="steps-grid">
-      <div class="step-card">
-        <div class="step-num">1</div>
+    <div class="flow-list">
+      <div class="flow-step fade-in">
+        <div class="step-badge">1</div>
         <h3>お問い合わせ</h3>
-        <p>LINEまたはフォームからご連絡ください。<br>お店の状況をヒアリングします。</p>
+        <p>LINEまたはフォームからご連絡。お店の状況をヒアリングします。</p>
       </div>
-      <div class="step-card">
-        <div class="step-num">2</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step fade-in">
+        <div class="step-badge">2</div>
         <h3>初期設定（当社が対応）</h3>
-        <p>メニュー登録・LINE連携・<br>自動配信設定をすべて代行します。</p>
+        <p>メニュー登録・LINE連携・自動配信設定をすべて代行します。</p>
       </div>
-      <div class="step-card">
-        <div class="step-num">3</div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-step fade-in">
+        <div class="step-badge">3</div>
         <h3>運用開始</h3>
-        <p>お客様にLINE友だち追加を促すだけ。<br>あとはAIが自動で動きます。</p>
+        <p>お客様にLINE友だち追加を促すだけ。あとはAIが自動で動きます。</p>
       </div>
     </div>
-    <div class="steps-note">💡 お店側でやることは「LINE友だち追加してね」と伝えるだけ！</div>
+    <div class="flow-note">💡 お店側でやることは「LINE友だち追加してね」と伝えるだけ！</div>
   </div>
 </section>
 
@@ -445,26 +539,31 @@ footer{background:var(--text-dark);color:rgba(255,255,255,0.6);text-align:center
       </form>
     </div>
 
-    <!-- 送信完了後に表示 -->
     <div class="demo-form-card" id="demo-success" style="display:none;">
       <div class="demo-success">
         <div class="check">✅</div>
         <h3>お申し込みありがとうございます！</h3>
         <p>デモ画面のご案内をメールでお送りしました。<br>ご入力いただいたメールアドレスをご確認ください。</p>
-        <p style="font-size:13px; color:rgba(255,255,255,0.5); margin-top:16px;">※ メールが届かない場合は迷惑メールフォルダをご確認ください。<br>それでも届かない場合は info@allbrain.one までご連絡ください。</p>
+        <p style="font-size:12px;color:rgba(255,255,255,0.5);margin-top:12px;">※ メールが届かない場合は迷惑メールフォルダをご確認ください。<br>それでも届かない場合は info@allbrain.one までご連絡ください。</p>
       </div>
     </div>
 
   </div>
 </section>
 
+<footer>
+  <div class="container">
+    <p>© 2025 アキナイAI｜飽きない商いを、AIがつくる。</p>
+  </div>
+</footer>
+
 <script>
+// Form submit
 function submitDemoForm(e) {
   e.preventDefault();
   var btn = document.getElementById('demo-submit-btn');
   btn.disabled = true;
   btn.textContent = '送信中...';
-
   var data = {
     shopName: document.getElementById('f-shop').value,
     name: document.getElementById('f-name').value,
@@ -472,31 +571,56 @@ function submitDemoForm(e) {
     email: document.getElementById('f-email').value,
     note: document.getElementById('f-note').value
   };
-
   fetch('https://script.google.com/macros/s/AKfycbxfsdTW4RJGQ5Xhst1pYCwEwmto0VeijNNmT2onac0ld0pPxvSiKnsTglJs08rGP2KD/exec', {
-    method: 'POST',
-    mode: 'no-cors',
+    method: 'POST', mode: 'no-cors',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data)
-  })
-  .then(function() {
+  }).then(function() {
     document.getElementById('demo-form-card').style.display = 'none';
     document.getElementById('demo-success').style.display = 'block';
-  })
-  .catch(function() {
+  }).catch(function() {
     document.getElementById('demo-form-card').style.display = 'none';
     document.getElementById('demo-success').style.display = 'block';
   });
 }
+
+// Scroll animations
+var observer = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      // Animate chart bars
+      var bars = entry.target.querySelectorAll('.chart-bar');
+      bars.forEach(function(bar) {
+        setTimeout(function() { bar.style.width = bar.getAttribute('data-width'); }, 300);
+      });
+      // Animate stat numbers
+      if (entry.target.classList.contains('stat-card')) {
+        var numEl = entry.target.querySelector('.stat-num');
+        if (numEl) animateNum(numEl, parseFloat(numEl.getAttribute('data-target')));
+      }
+    }
+  });
+}, { threshold: 0.15 });
+
+document.querySelectorAll('.fade-in').forEach(function(el) { observer.observe(el); });
+
+function animateNum(el, target) {
+  var start = 0;
+  var duration = 1200;
+  var startTime = null;
+  var isFloat = target % 1 !== 0;
+  function step(ts) {
+    if (!startTime) startTime = ts;
+    var progress = Math.min((ts - startTime) / duration, 1);
+    var eased = 1 - Math.pow(1 - progress, 3);
+    var current = eased * target;
+    el.textContent = isFloat ? current.toFixed(1) : Math.round(current);
+    if (progress < 1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
 </script>
-
-
-<!-- ===== Footer ===== -->
-<footer>
-  <div class="container">
-    <p>© 2025 アキナイAI｜飽きない商いを、AIがつくる。</p>
-  </div>
-</footer>
 
 </body>
 </html>
