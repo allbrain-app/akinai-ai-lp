@@ -188,6 +188,34 @@ footer{background:var(--text-dark);color:rgba(255,255,255,0.6);text-align:center
   .feature-grid{grid-template-columns:repeat(3,1fr);gap:16px;}
   .site-header .logo-img{height:32px;}
 }
+
+/* プラポリ同意チェックボックス */
+.pp-agree-label{
+  display:flex!important;
+  align-items:flex-start;
+  gap:8px;
+  margin:16px 0 8px;
+  font-size:13px;
+  color:#cbd5e1;
+  cursor:pointer;
+  line-height:1.6;
+}
+.pp-agree-label input[type="checkbox"]{
+  margin-top:4px;
+  width:18px;
+  height:18px;
+  min-width:18px;
+  accent-color:#3b82f6;
+  flex-shrink:0;
+  -webkit-appearance:checkbox;
+  appearance:checkbox;
+}
+.pp-agree-label a{
+  color:#60a5fa;
+  text-decoration:underline;
+}
+
+  
 </style>
 </head>
 <body>
@@ -570,9 +598,9 @@ footer{background:var(--text-dark);color:rgba(255,255,255,0.6);text-align:center
         <textarea id="f-note" rows="2" placeholder="気になっていることがあればお書きください"></textarea>
 
         <!-- プライバシーポリシー同意 -->
-        <label style="display:flex;align-items:flex-start;gap:8px;margin:16px 0 8px;font-size:13px;color:#cbd5e1;cursor:pointer;line-height:1.6;">
-          <input type="checkbox" id="pp-agree" style="margin-top:4px;width:18px;height:18px;accent-color:#3b82f6;flex-shrink:0;">
-          <span><a href="https://akinai.allbrain.one/privacy.html" target="_blank" rel="noopener" style="color:#60a5fa;text-decoration:underline;">プライバシーポリシー</a>に同意する</span>
+        <label class="pp-agree-label">
+          <input type="checkbox" id="pp-agree">
+          <span><a href="https://akinai.allbrain.one/privacy.html" target="_blank" rel="noopener">プライバシーポリシー</a>に同意する</span>
         </label>
 
         <button type="submit" class="demo-form-btn" id="demo-submit-btn">デモを体験する →</button>
