@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>アキナイAI｜飽きない商いを、AIがつくる。</title>
 <meta name="description" content="LINE連携×AIで、お客様のリピートを自動化する飲食店向けオールインワンツール">
+<link rel="icon" type="image/png" href="images/logo-icon.png">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
@@ -24,6 +25,29 @@ a{color:var(--primary);text-decoration:none;}
 /* ===== Layout ===== */
 .container{max-width:720px;margin:0 auto;padding:0 20px;}
 section{padding:64px 0;}
+
+/* ===== Site Header (Logo) ===== */
+.site-header{
+  position:absolute;
+  top:0;left:0;right:0;
+  z-index:10;
+  padding:16px 20px;
+}
+.site-header .container{
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+}
+.site-header .logo-img{
+  height:28px;
+  width:auto;
+  opacity:0.85;
+  filter:brightness(0) invert(1);
+  transition:opacity 0.2s;
+}
+.site-header .logo-img:hover{
+  opacity:1;
+}
 
 /* ===== Hero ===== */
 .hero{background:linear-gradient(135deg,#1e40af 0%,#3b82f6 50%,#60a5fa 100%);color:#fff;padding:100px 0 80px;text-align:center;position:relative;overflow:hidden;}
@@ -64,7 +88,6 @@ section{padding:64px 0;}
 .sol-arrow{text-align:center;padding:12px 0;font-size:24px;color:var(--primary);font-weight:700;}
 .sol-after .sol-item{color:var(--text-dark);}
 .sol-badge{display:inline-block;background:var(--primary);color:#fff;padding:6px 16px;border-radius:50px;font-size:13px;font-weight:700;margin-top:12px;}
-/* Visual Chart in solution */
 .sol-chart{margin:16px 0 8px;padding:16px;background:#fff;border-radius:12px;}
 .chart-row{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
 .chart-label{font-size:12px;font-weight:600;width:60px;flex-shrink:0;text-align:right;color:var(--text-mid);}
@@ -152,6 +175,7 @@ section{padding:64px 0;}
 
 /* ===== Footer ===== */
 footer{background:var(--text-dark);color:rgba(255,255,255,0.6);text-align:center;padding:28px 0;font-size:12px;}
+.footer-logo{height:20px;width:auto;opacity:0.4;margin-bottom:8px;filter:brightness(0) invert(1);}
 
 /* ===== Scroll Animation ===== */
 .fade-in{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;}
@@ -162,10 +186,20 @@ footer{background:var(--text-dark);color:rgba(255,255,255,0.6);text-align:center
   .container{max-width:720px;}
   .stats-grid{grid-template-columns:repeat(3,1fr);gap:20px;}
   .feature-grid{grid-template-columns:repeat(3,1fr);gap:16px;}
+  .site-header .logo-img{height:32px;}
 }
 </style>
 </head>
 <body>
+
+<!-- ===== Site Header (Logo) ===== -->
+<header class="site-header">
+  <div class="container">
+    <a href="#" aria-label="アキナイAI トップ">
+      <img src="images/logo-horizontal.png" alt="アキナイAI" class="logo-img" loading="eager">
+    </a>
+  </div>
+</header>
 
 <!-- ===== Hero ===== -->
 <section class="hero">
@@ -176,8 +210,6 @@ footer{background:var(--text-dark);color:rgba(255,255,255,0.6);text-align:center
     <a href="#contact" class="hero-cta">無料デモを体験する →</a>
   </div>
 </section>
-
-
 
 <!-- ===== Pain ===== -->
 <section class="pain-section" id="pain">
@@ -555,6 +587,7 @@ footer{background:var(--text-dark);color:rgba(255,255,255,0.6);text-align:center
 
 <footer>
   <div class="container">
+    <img src="images/logo-horizontal.png" alt="アキナイAI" class="footer-logo" loading="lazy">
     <p>© 2025 アキナイAI｜飽きない商いを、AIがつくる。</p>
   </div>
 </footer>
@@ -591,12 +624,10 @@ var observer = new IntersectionObserver(function(entries) {
   entries.forEach(function(entry) {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
-      // Animate chart bars
       var bars = entry.target.querySelectorAll('.chart-bar');
       bars.forEach(function(bar) {
         setTimeout(function() { bar.style.width = bar.getAttribute('data-width'); }, 300);
       });
-      // Animate stat numbers
       if (entry.target.classList.contains('stat-card')) {
         var numEl = entry.target.querySelector('.stat-num');
         if (numEl) animateNum(numEl, parseFloat(numEl.getAttribute('data-target')));
@@ -608,7 +639,6 @@ var observer = new IntersectionObserver(function(entries) {
 document.querySelectorAll('.fade-in').forEach(function(el) { observer.observe(el); });
 
 function animateNum(el, target) {
-  var start = 0;
   var duration = 1200;
   var startTime = null;
   var isFloat = target % 1 !== 0;
