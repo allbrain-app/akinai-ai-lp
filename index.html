@@ -569,7 +569,14 @@ footer{background:var(--text-dark);color:rgba(255,255,255,0.6);text-align:center
         <label>ご質問・ご要望<span style="color:rgba(255,255,255,0.5);margin-left:4px;font-size:11px;">任意</span></label>
         <textarea id="f-note" rows="2" placeholder="気になっていることがあればお書きください"></textarea>
 
+        <!-- プライバシーポリシー同意 -->
+        <label style="display:flex;align-items:flex-start;gap:8px;margin:16px 0 8px;font-size:13px;color:#cbd5e1;cursor:pointer;line-height:1.6;">
+          <input type="checkbox" id="pp-agree" style="margin-top:4px;width:18px;height:18px;accent-color:#3b82f6;flex-shrink:0;">
+          <span><a href="https://akinai.allbrain.one/privacy.html" target="_blank" rel="noopener" style="color:#60a5fa;text-decoration:underline;">プライバシーポリシー</a>に同意する</span>
+        </label>
+
         <button type="submit" class="demo-form-btn" id="demo-submit-btn">デモを体験する →</button>
+    
       </form>
     </div>
 
@@ -596,6 +603,10 @@ footer{background:var(--text-dark);color:rgba(255,255,255,0.6);text-align:center
 // Form submit
 function submitDemoForm(e) {
   e.preventDefault();
+  if (!document.getElementById('pp-agree').checked) {
+    alert('プライバシーポリシーへの同意が必要です。');
+    return;
+  }
   var btn = document.getElementById('demo-submit-btn');
   btn.disabled = true;
   btn.textContent = '送信中...';
