@@ -8,7 +8,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-/* ===== RESET & BASE ===== */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;font-size:16px;}
 body{font-family:'Noto Sans JP',sans-serif;color:#1e293b;background:#fff;line-height:1.8;-webkit-font-smoothing:antialiased;}
@@ -16,10 +15,9 @@ a{color:inherit;text-decoration:none;}
 img{max-width:100%;height:auto;display:block;}
 ul{list-style:none;}
 
-/* ===== UTILITY ===== */
 .container{max-width:1080px;margin:0 auto;padding:0 24px;}
 .section{padding:100px 0;}
-.section-dark{background:#0f172a;color:#e2e8f0;}
+.section-dark{background:#1a2332;color:#e2e8f0;}
 .section-light{background:#f8fafc;}
 .section-white{background:#fff;}
 .section-label{display:inline-block;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#3b82f6;margin-bottom:12px;}
@@ -29,16 +27,14 @@ ul{list-style:none;}
 .text-center{text-align:center;}
 .mx-auto{margin-left:auto;margin-right:auto;}
 
-/* ===== HEADER ===== */
-.site-header{position:fixed;top:0;left:0;width:100%;z-index:100;background:rgba(15,23,42,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.06);}
-.header-inner{display:flex;align-items:center;justify-content:space-between;height:56px;max-width:1080px;margin:0 auto;padding:0 24px;}
+/* ===== HEADER (no CTA button) ===== */
+.site-header{position:fixed;top:0;left:0;width:100%;z-index:100;background:rgba(26,35,50,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.06);}
+.header-inner{display:flex;align-items:center;justify-content:center;height:56px;max-width:1080px;margin:0 auto;padding:0 24px;}
 .header-logo{font-size:18px;font-weight:700;color:#fff;letter-spacing:.5px;}
 .header-logo span{color:#3b82f6;}
-.header-cta{font-size:13px;font-weight:600;color:#fff;background:#3b82f6;padding:8px 20px;border-radius:6px;transition:background .2s;}
-.header-cta:hover{background:#2563eb;}
 
 /* ===== HERO ===== */
-.hero{position:relative;min-height:92vh;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(160deg,#0f172a 0%,#1e293b 50%,#0f172a 100%);color:#fff;padding:120px 24px 80px;overflow:hidden;}
+.hero{position:relative;min-height:92vh;display:flex;align-items:center;justify-content:center;text-align:center;background:linear-gradient(160deg,#1a2332 0%,#273548 50%,#1a2332 100%);color:#fff;padding:120px 24px 80px;overflow:hidden;}
 .hero::before{content:'';position:absolute;top:-40%;right:-20%;width:600px;height:600px;background:radial-gradient(circle,rgba(59,130,246,.12) 0%,transparent 70%);pointer-events:none;}
 .hero-content{position:relative;z-index:2;max-width:720px;}
 .hero-badge{display:inline-block;font-size:12px;font-weight:600;letter-spacing:1.5px;color:#60a5fa;border:1px solid rgba(96,165,250,.3);padding:6px 16px;border-radius:40px;margin-bottom:24px;}
@@ -65,7 +61,7 @@ ul{list-style:none;}
 .ba-heading{font-size:clamp(18px,3vw,24px);font-weight:700;margin-bottom:28px;}
 .ba-content{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;}
 .ba-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:start;}
-.ba-col{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:24px;}
+.ba-col{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:24px;}
 .ba-col-label{font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.1);}
 .ba-col-label.before{color:#f87171;}
 .ba-col-label.after{color:#34d399;}
@@ -74,16 +70,15 @@ ul{list-style:none;}
 .ba-col .after-item::before{content:'✓';color:#34d399;font-weight:700;margin-right:8px;}
 .ba-arrow{display:flex;align-items:center;justify-content:center;font-size:28px;color:#3b82f6;padding-top:40px;}
 .ba-stat{display:flex;gap:20px;margin-top:20px;}
-.ba-stat-box{background:rgba(59,130,246,.08);border:1px solid rgba(59,130,246,.15);border-radius:10px;padding:16px 20px;text-align:center;flex:1;}
+.ba-stat-box{background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.2);border-radius:10px;padding:16px 20px;text-align:center;flex:1;}
 .ba-stat-num{font-size:32px;font-weight:700;color:#60a5fa;}
 .ba-stat-label{font-size:12px;color:#94a3b8;margin-top:4px;}
 .ba-feature-link{display:inline-block;font-size:13px;color:#60a5fa;margin-top:16px;font-weight:500;}
 
-/* Screenshot mockup */
 .ba-screenshot{display:flex;justify-content:center;align-items:flex-start;gap:16px;}
-.phone-mockup{background:#1a1a2e;border-radius:24px;padding:8px;box-shadow:0 20px 60px rgba(0,0,0,.4);max-width:220px;width:100%;position:relative;overflow:hidden;}
+.phone-mockup{background:#222d3d;border-radius:24px;padding:8px;box-shadow:0 20px 60px rgba(0,0,0,.35);max-width:220px;width:100%;position:relative;overflow:hidden;}
 .phone-mockup.small{max-width:180px;}
-.phone-notch{width:80px;height:6px;background:#0f172a;border-radius:3px;margin:4px auto 6px;opacity:.6;}
+.phone-notch{width:80px;height:6px;background:#1a2332;border-radius:3px;margin:4px auto 6px;opacity:.6;}
 .phone-mockup img{width:100%;border-radius:16px;display:block;}
 
 /* ===== NUMBER IMPACT ===== */
@@ -114,16 +109,16 @@ ul{list-style:none;}
 .feat-card h3{font-size:16px;font-weight:600;margin-bottom:8px;}
 .feat-card p{font-size:13px;color:#64748b;line-height:1.7;}
 
-/* ===== PRICING (horizontal scroll on mobile, flex on desktop) ===== */
-.price-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;padding-bottom:16px;}
+/* ===== PRICING ===== */
+.price-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;padding-bottom:16px;padding-top:20px;}
 .price-scroll::-webkit-scrollbar{height:4px;}
 .price-scroll::-webkit-scrollbar-track{background:#e2e8f0;border-radius:2px;}
 .price-scroll::-webkit-scrollbar-thumb{background:#3b82f6;border-radius:2px;}
 .price-grid{display:flex;gap:28px;align-items:start;min-width:max-content;}
-.price-card{min-width:300px;flex-shrink:0;scroll-snap-align:center;background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:36px 28px;text-align:center;position:relative;transition:box-shadow .3s,transform .3s;}
+.price-card{min-width:300px;flex-shrink:0;scroll-snap-align:center;background:#fff;border:1px solid #e2e8f0;border-radius:14px;padding:36px 28px;padding-top:44px;text-align:center;position:relative;transition:box-shadow .3s,transform .3s;}
 .price-card:hover{box-shadow:0 8px 32px rgba(0,0,0,.06);transform:translateY(-4px);}
 .price-card.recommended{border-color:#3b82f6;box-shadow:0 0 0 1px #3b82f6;}
-.price-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#3b82f6;color:#fff;font-size:11px;font-weight:700;padding:4px 16px;border-radius:20px;letter-spacing:.5px;}
+.price-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:#3b82f6;color:#fff;font-size:12px;font-weight:700;padding:6px 20px;border-radius:20px;letter-spacing:.5px;white-space:nowrap;z-index:2;}
 .price-plan{font-size:14px;font-weight:600;color:#64748b;margin-bottom:8px;}
 .price-amount{font-size:42px;font-weight:700;color:#1e293b;line-height:1;}
 .price-amount span{font-size:14px;font-weight:500;color:#64748b;}
@@ -133,9 +128,8 @@ ul{list-style:none;}
 .price-list li::before{content:'✓';color:#3b82f6;font-weight:700;font-size:14px;flex-shrink:0;}
 .price-note{font-size:12px;color:#94a3b8;text-align:center;margin-top:32px;line-height:1.8;}
 
-/* Desktop: center the 3 cards */
 @media(min-width:980px){
-  .price-scroll{overflow:visible;}
+  .price-scroll{overflow:visible;padding-top:20px;}
   .price-grid{min-width:0;justify-content:center;}
 }
 
@@ -163,17 +157,17 @@ ul{list-style:none;}
 .faq-a-inner{padding:0 0 20px;}
 
 /* ===== CTA / FORM ===== */
-.cta-section{background:linear-gradient(160deg,#0f172a,#1e293b);color:#fff;padding:80px 24px;text-align:center;}
+.cta-section{background:linear-gradient(160deg,#1a2332,#273548);color:#fff;padding:80px 24px;text-align:center;}
 .cta-section .section-title{color:#fff;}
 .cta-section .section-sub{color:#94a3b8;}
-.demo-form-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:40px 32px;max-width:520px;margin:0 auto;text-align:left;}
+.demo-form-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:40px 32px;max-width:520px;margin:0 auto;text-align:left;}
 .demo-form-card h3{font-size:20px;font-weight:700;margin-bottom:4px;color:#fff;}
 .demo-form-card .form-note{font-size:13px;color:#94a3b8;margin-bottom:24px;}
 .demo-form-card label{display:block;font-size:13px;font-weight:500;color:#cbd5e1;margin-bottom:6px;margin-top:16px;}
-.demo-form-card input,.demo-form-card select,.demo-form-card textarea{width:100%;padding:12px 14px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:8px;color:#fff;font-size:14px;font-family:inherit;outline:none;transition:border-color .2s;}
+.demo-form-card input,.demo-form-card select,.demo-form-card textarea{width:100%;padding:12px 14px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:8px;color:#fff;font-size:14px;font-family:inherit;outline:none;transition:border-color .2s;}
 .demo-form-card input:focus,.demo-form-card select:focus,.demo-form-card textarea:focus{border-color:#3b82f6;}
-.demo-form-card input::placeholder,.demo-form-card textarea::placeholder{color:#475569;}
-.demo-form-card select option{background:#1e293b;color:#fff;}
+.demo-form-card input::placeholder,.demo-form-card textarea::placeholder{color:#64748b;}
+.demo-form-card select option{background:#273548;color:#fff;}
 .demo-form-card textarea{resize:vertical;min-height:60px;}
 .btn-submit{width:100%;padding:16px;font-size:16px;font-weight:700;color:#fff;background:linear-gradient(135deg,#3b82f6,#2563eb);border:none;border-radius:8px;cursor:pointer;margin-top:20px;transition:transform .2s,box-shadow .2s;font-family:inherit;}
 .btn-submit:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(59,130,246,.35);}
@@ -182,11 +176,11 @@ ul{list-style:none;}
 .pp-agree-label a{color:#60a5fa;text-decoration:underline;}
 
 /* ===== FOOTER ===== */
-.site-footer{background:#0f172a;color:#64748b;text-align:center;padding:32px 24px;font-size:13px;border-top:1px solid rgba(255,255,255,.06);}
+.site-footer{background:#1a2332;color:#64748b;text-align:center;padding:32px 24px;font-size:13px;border-top:1px solid rgba(255,255,255,.06);}
 .site-footer a{color:#60a5fa;margin:0 12px;}
 
 /* ===== MOBILE STICKY CTA ===== */
-.mobile-sticky{display:none;position:fixed;bottom:0;left:0;width:100%;background:rgba(15,23,42,.96);backdrop-filter:blur(12px);padding:12px 24px;z-index:99;border-top:1px solid rgba(255,255,255,.08);}
+.mobile-sticky{display:none;position:fixed;bottom:0;left:0;width:100%;background:rgba(26,35,50,.96);backdrop-filter:blur(12px);padding:12px 24px;z-index:99;border-top:1px solid rgba(255,255,255,.08);}
 .mobile-sticky a{display:block;text-align:center;font-size:15px;font-weight:700;color:#fff;background:linear-gradient(135deg,#3b82f6,#2563eb);padding:14px;border-radius:8px;}
 
 /* ===== RESPONSIVE ===== */
@@ -215,7 +209,6 @@ ul{list-style:none;}
   .price-card{min-width:260px;}
 }
 
-/* ===== ANIMATIONS ===== */
 .fade-up{opacity:0;transform:translateY(32px);transition:opacity .7s ease,transform .7s ease;}
 .fade-up.visible{opacity:1;transform:translateY(0);}
 </style>
@@ -226,7 +219,6 @@ ul{list-style:none;}
 <header class="site-header">
   <div class="header-inner">
     <div class="header-logo">アキナイ<span>AI</span></div>
-    <a href="#contact" class="header-cta">無料デモに申し込む</a>
   </div>
 </header>
 
@@ -251,23 +243,17 @@ ul{list-style:none;}
     </div>
     <div class="pain-grid">
       <div class="pain-card fade-up">
-        <div class="pain-icon">
-          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </div>
+        <div class="pain-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
         <h3>常連フォローの仕方がわからない</h3>
         <p>何かした方がいいのは感じているけど、具体的に何をすればいいのか分からない。</p>
       </div>
       <div class="pain-card fade-up">
-        <div class="pain-icon">
-          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
-        </div>
+        <div class="pain-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
         <h3>お客様の好みを覚えきれない</h3>
         <p>常連が増えるほど大変。忘れたら失礼になるプレッシャーも。</p>
       </div>
       <div class="pain-card fade-up">
-        <div class="pain-icon">
-          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-        </div>
+        <div class="pain-icon"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
         <h3>売上を上げたいけど正解がわからない</h3>
         <p>SNSはやった方がいい気がするけど、何が効果的なのか判断できない。</p>
       </div>
@@ -284,7 +270,6 @@ ul{list-style:none;}
       <p class="section-sub mx-auto">アキナイAIが課題をどのように解決するのか、実際の画面とともにご紹介します。</p>
     </div>
 
-    <!-- BA 1 -->
     <div class="ba-block fade-up">
       <div class="ba-label">課題 1</div>
       <h3 class="ba-heading">常連フォローの仕方がわからない</h3>
@@ -320,15 +305,11 @@ ul{list-style:none;}
           <div class="ba-feature-link">→ 解決する機能：AI自動配信</div>
         </div>
         <div class="ba-screenshot">
-          <div class="phone-mockup">
-            <div class="phone-notch"></div>
-            <img src="./images/ss-auto-delivery.png" alt="AI自動配信 管理画面" loading="lazy">
-          </div>
+          <div class="phone-mockup"><div class="phone-notch"></div><img src="./images/ss-auto-delivery.png" alt="AI自動配信 管理画面" loading="lazy"></div>
         </div>
       </div>
     </div>
 
-    <!-- BA 2 -->
     <div class="ba-block fade-up">
       <div class="ba-label">課題 2</div>
       <h3 class="ba-heading">お客様の好みを全部覚えきれない</h3>
@@ -355,19 +336,12 @@ ul{list-style:none;}
           <div class="ba-feature-link">→ 解決する機能：顧客管理 ＋ AIソムリエ</div>
         </div>
         <div class="ba-screenshot">
-          <div class="phone-mockup small">
-            <div class="phone-notch"></div>
-            <img src="./images/ss-taste-chart.png" alt="味覚診断チャート" loading="lazy">
-          </div>
-          <div class="phone-mockup small">
-            <div class="phone-notch"></div>
-            <img src="./images/ss-sommelier.png" alt="AIソムリエ画面" loading="lazy">
-          </div>
+          <div class="phone-mockup small"><div class="phone-notch"></div><img src="./images/ss-taste-chart.png" alt="味覚診断チャート" loading="lazy"></div>
+          <div class="phone-mockup small"><div class="phone-notch"></div><img src="./images/ss-sommelier.png" alt="AIソムリエ画面" loading="lazy"></div>
         </div>
       </div>
     </div>
 
-    <!-- BA 3 -->
     <div class="ba-block fade-up">
       <div class="ba-label">課題 3</div>
       <h3 class="ba-heading">売上を上げたいけど正解がわからない</h3>
@@ -393,10 +367,7 @@ ul{list-style:none;}
           <div class="ba-feature-link">→ 解決する機能：売上分析ダッシュボード</div>
         </div>
         <div class="ba-screenshot">
-          <div class="phone-mockup">
-            <div class="phone-notch"></div>
-            <img src="./images/ss-dashboard.png" alt="売上分析ダッシュボード" loading="lazy">
-          </div>
+          <div class="phone-mockup"><div class="phone-notch"></div><img src="./images/ss-dashboard.png" alt="売上分析ダッシュボード" loading="lazy"></div>
         </div>
       </div>
     </div>
@@ -434,13 +405,7 @@ ul{list-style:none;}
     </div>
     <div class="compare-wrap fade-up">
       <table class="compare-table">
-        <thead>
-          <tr>
-            <th>機能</th>
-            <th>一般的なLINE配信ツール</th>
-            <th class="highlight">アキナイAI</th>
-          </tr>
-        </thead>
+        <thead><tr><th>機能</th><th>一般的なLINE配信ツール</th><th class="highlight">アキナイAI</th></tr></thead>
         <tbody>
           <tr><td>LINEモバイルオーダー</td><td><span class="cross">✕</span></td><td class="highlight"><span class="check">○</span></td></tr>
           <tr><td>テーブル別注文管理</td><td><span class="cross">✕</span></td><td class="highlight"><span class="check">○</span></td></tr>
@@ -467,36 +432,12 @@ ul{list-style:none;}
       <p class="section-sub mx-auto">飲食店に必要な機能をワンストップで提供。すべてLINE上で完結します。</p>
     </div>
     <div class="feat-grid">
-      <div class="feat-card fade-up">
-        <div class="feat-icon"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-        <h3>LINE注文</h3>
-        <p>LINEから簡単注文。アプリ不要でお客様の負担ゼロ。</p>
-      </div>
-      <div class="feat-card fade-up">
-        <div class="feat-icon"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-        <h3>顧客管理</h3>
-        <p>来店回数・注文履歴・味覚傾向を自動で管理。</p>
-      </div>
-      <div class="feat-card fade-up">
-        <div class="feat-icon"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div>
-        <h3>AIソムリエ</h3>
-        <p>好みに合った一品をAIが自動で提案。接客品質を底上げ。</p>
-      </div>
-      <div class="feat-card fade-up">
-        <div class="feat-icon"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
-        <h3>AI自動配信</h3>
-        <p>最適なタイミングでメッセージを自動送信。手間ゼロでフォロー。</p>
-      </div>
-      <div class="feat-card fade-up">
-        <div class="feat-icon"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
-        <h3>売上分析</h3>
-        <p>リピート率・客単価をダッシュボードでリアルタイム可視化。</p>
-      </div>
-      <div class="feat-card fade-up">
-        <div class="feat-icon"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div>
-        <h3>味覚診断</h3>
-        <p>味覚をチャートで可視化。シェア画像を自動生成。</p>
-      </div>
+      <div class="feat-card fade-up"><div class="feat-icon"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><h3>LINE注文</h3><p>LINEから簡単注文。アプリ不要でお客様の負担ゼロ。</p></div>
+      <div class="feat-card fade-up"><div class="feat-icon"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div><h3>顧客管理</h3><p>来店回数・注文履歴・味覚傾向を自動で管理。</p></div>
+      <div class="feat-card fade-up"><div class="feat-icon"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg></div><h3>AIソムリエ</h3><p>好みに合った一品をAIが自動で提案。接客品質を底上げ。</p></div>
+      <div class="feat-card fade-up"><div class="feat-icon"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div><h3>AI自動配信</h3><p>最適なタイミングでメッセージを自動送信。手間ゼロでフォロー。</p></div>
+      <div class="feat-card fade-up"><div class="feat-icon"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><h3>売上分析</h3><p>リピート率・客単価をダッシュボードでリアルタイム可視化。</p></div>
+      <div class="feat-card fade-up"><div class="feat-icon"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><h3>味覚診断</h3><p>味覚をチャートで可視化。シェア画像を自動生成。</p></div>
     </div>
   </div>
 </section>
@@ -511,48 +452,24 @@ ul{list-style:none;}
     </div>
     <div class="price-scroll" id="price-scroll">
       <div class="price-grid">
-        <!-- Light -->
         <div class="price-card fade-up">
           <div class="price-plan">ライト</div>
           <div class="price-amount">¥1,980<span>/月</span></div>
           <div class="price-period">税抜</div>
-          <ul class="price-list">
-            <li>LINE注文・メニュー管理</li>
-            <li>顧客管理</li>
-            <li>AIソムリエ</li>
-            <li>AI自動配信（30件/月）</li>
-            <li>売上分析ダッシュボード</li>
-            <li>味覚診断・シェア画像</li>
-          </ul>
+          <ul class="price-list"><li>LINE注文・メニュー管理</li><li>顧客管理</li><li>AIソムリエ</li><li>AI自動配信（30件/月）</li><li>売上分析ダッシュボード</li><li>味覚診断・シェア画像</li></ul>
         </div>
-        <!-- Standard -->
         <div class="price-card recommended fade-up" id="price-standard">
           <div class="price-badge">おすすめ</div>
           <div class="price-plan">スタンダード</div>
           <div class="price-amount">¥2,980<span>/月</span></div>
           <div class="price-period">税抜</div>
-          <ul class="price-list">
-            <li>LINE注文・メニュー管理</li>
-            <li>顧客管理</li>
-            <li>AIソムリエ</li>
-            <li>AI自動配信（無制限）</li>
-            <li>売上分析ダッシュボード</li>
-            <li>味覚診断・シェア画像</li>
-          </ul>
+          <ul class="price-list"><li>LINE注文・メニュー管理</li><li>顧客管理</li><li>AIソムリエ</li><li>AI自動配信（無制限）</li><li>売上分析ダッシュボード</li><li>味覚診断・シェア画像</li></ul>
         </div>
-        <!-- Premium -->
         <div class="price-card fade-up">
           <div class="price-plan">プレミアム</div>
           <div class="price-amount">¥4,980<span>/月</span></div>
           <div class="price-period">税抜</div>
-          <ul class="price-list">
-            <li>LINE注文・メニュー管理</li>
-            <li>顧客管理</li>
-            <li>AIソムリエ</li>
-            <li>AI自動配信（無制限）</li>
-            <li>売上分析ダッシュボード</li>
-            <li>味覚診断 + 月次レポート + 専任サポート</li>
-          </ul>
+          <ul class="price-list"><li>LINE注文・メニュー管理</li><li>顧客管理</li><li>AIソムリエ</li><li>AI自動配信（無制限）</li><li>売上分析ダッシュボード</li><li>味覚診断 + 月次レポート + 専任サポート</li></ul>
         </div>
       </div>
     </div>
@@ -569,21 +486,9 @@ ul{list-style:none;}
       <p class="section-sub mx-auto">最短即日で運用開始。初期設定はすべて当社が代行します。</p>
     </div>
     <div class="flow-steps">
-      <div class="flow-step fade-up">
-        <div class="flow-num">1</div>
-        <h3>お問い合わせ</h3>
-        <p>LINEまたはフォームからご連絡。お店の状況をヒアリングします。</p>
-      </div>
-      <div class="flow-step fade-up">
-        <div class="flow-num">2</div>
-        <h3>初期設定（当社が対応）</h3>
-        <p>メニュー登録・LINE連携・自動配信設定をすべて代行します。</p>
-      </div>
-      <div class="flow-step fade-up">
-        <div class="flow-num">3</div>
-        <h3>運用開始</h3>
-        <p>お客様にLINE友だち追加を促すだけ。あとはAIが自動で動きます。</p>
-      </div>
+      <div class="flow-step fade-up"><div class="flow-num">1</div><h3>お問い合わせ</h3><p>LINEまたはフォームからご連絡。お店の状況をヒアリングします。</p></div>
+      <div class="flow-step fade-up"><div class="flow-num">2</div><h3>初期設定（当社が対応）</h3><p>メニュー登録・LINE連携・自動配信設定をすべて代行します。</p></div>
+      <div class="flow-step fade-up"><div class="flow-num">3</div><h3>運用開始</h3><p>お客様にLINE友だち追加を促すだけ。あとはAIが自動で動きます。</p></div>
     </div>
     <div class="flow-tip fade-up">お店側でやることは「LINE友だち追加してね」と伝えるだけ。</div>
   </div>
@@ -597,30 +502,12 @@ ul{list-style:none;}
       <h2 class="section-title">よくあるご質問</h2>
     </div>
     <div class="faq-list">
-      <div class="faq-item">
-        <button class="faq-q" type="button">導入に必要なものは何ですか？</button>
-        <div class="faq-a"><div class="faq-a-inner">LINE公式アカウントのみです。アカウントをお持ちでない場合は、初期設定時に当社が開設をサポートします。専用アプリのインストールなどは不要です。</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" type="button">LINEのメッセージ通数制限はどうなりますか？</button>
-        <div class="faq-a"><div class="faq-a-inner">LINE公式アカウントの無料プラン（月200通）を超える場合は、LINE側の有料プランへの切り替えが必要です。アキナイAI自体の月額料金は通数に関わらず定額です。</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" type="button">契約期間の縛りはありますか？</button>
-        <div class="faq-a"><div class="faq-a-inner">契約期間の縛りはありません。月単位でいつでも解約可能です。</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" type="button">ITに詳しくなくても使えますか？</button>
-        <div class="faq-a"><div class="faq-a-inner">はい。初期設定は全て当社が代行します。運用開始後もLINEで友だち追加を促すだけで、AIが自動で動くため、特別なITスキルは不要です。</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" type="button">デモは無料ですか？</button>
-        <div class="faq-a"><div class="faq-a-inner">はい、完全無料です。フォームからお申し込みいただくと、1週間限定でデモ環境をお試しいただけます。クレジットカード登録も不要です。</div></div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-q" type="button">どんな業態の飲食店に向いていますか？</button>
-        <div class="faq-a"><div class="faq-a-inner">バー・スナック、居酒屋、レストラン、カフェなど、リピーター施策が重要な業態全般に対応しています。特にドリンクメニューが充実した店舗ではAIソムリエの効果が高くなります。</div></div>
-      </div>
+      <div class="faq-item"><button class="faq-q" type="button">導入に必要なものは何ですか？</button><div class="faq-a"><div class="faq-a-inner">LINE公式アカウントのみです。アカウントをお持ちでない場合は、初期設定時に当社が開設をサポートします。専用アプリのインストールなどは不要です。</div></div></div>
+      <div class="faq-item"><button class="faq-q" type="button">LINEのメッセージ通数制限はどうなりますか？</button><div class="faq-a"><div class="faq-a-inner">LINE公式アカウントの無料プラン（月200通）を超える場合は、LINE側の有料プランへの切り替えが必要です。アキナイAI自体の月額料金は通数に関わらず定額です。</div></div></div>
+      <div class="faq-item"><button class="faq-q" type="button">契約期間の縛りはありますか？</button><div class="faq-a"><div class="faq-a-inner">契約期間の縛りはありません。月単位でいつでも解約可能です。</div></div></div>
+      <div class="faq-item"><button class="faq-q" type="button">ITに詳しくなくても使えますか？</button><div class="faq-a"><div class="faq-a-inner">はい。初期設定は全て当社が代行します。運用開始後もLINEで友だち追加を促すだけで、AIが自動で動くため、特別なITスキルは不要です。</div></div></div>
+      <div class="faq-item"><button class="faq-q" type="button">デモは無料ですか？</button><div class="faq-a"><div class="faq-a-inner">はい、完全無料です。フォームからお申し込みいただくと、1週間限定でデモ環境をお試しいただけます。クレジットカード登録も不要です。</div></div></div>
+      <div class="faq-item"><button class="faq-q" type="button">どんな業態の飲食店に向いていますか？</button><div class="faq-a"><div class="faq-a-inner">バー・スナック、居酒屋、レストラン、カフェなど、リピーター施策が重要な業態全般に対応しています。特にドリンクメニューが充実した店舗ではAIソムリエの効果が高くなります。</div></div></div>
     </div>
   </div>
 </section>
@@ -639,142 +526,43 @@ ul{list-style:none;}
       <form id="demo-form" onsubmit="submitDemoForm(event)">
         <label for="f-shop">店舗名</label>
         <input type="text" id="f-shop" name="shop" placeholder="例：BAR アキナイ" required>
-
         <label for="f-name">お名前</label>
         <input type="text" id="f-name" name="name" placeholder="例：山田 太郎" required>
-
         <label for="f-type">業態</label>
         <select id="f-type" name="type" required>
           <option value="">選択してください</option>
-          <option>バー・スナック</option>
-          <option>居酒屋</option>
-          <option>レストラン・食堂</option>
-          <option>カフェ・喫茶店</option>
-          <option>焼肉・鉄板焼き</option>
-          <option>寿司・和食</option>
-          <option>ラーメン・中華</option>
-          <option>イタリアン・フレンチ</option>
-          <option>その他</option>
+          <option>バー・スナック</option><option>居酒屋</option><option>レストラン・食堂</option><option>カフェ・喫茶店</option><option>焼肉・鉄板焼き</option><option>寿司・和食</option><option>ラーメン・中華</option><option>イタリアン・フレンチ</option><option>その他</option>
         </select>
-
         <label for="f-tel">電話番号</label>
         <input type="tel" id="f-tel" name="tel" placeholder="例：090-1234-5678" required>
-
         <label for="f-email">メールアドレス</label>
         <input type="email" id="f-email" name="email" placeholder="例：info@example.com" required>
-
         <label for="f-note">備考（任意）</label>
         <textarea id="f-note" name="note" placeholder="ご質問があればお気軽にどうぞ"></textarea>
-
-        <label class="pp-agree-label">
-          <input type="checkbox" id="pp-agree">
-          <span><a href="https://akinai.allbrain.one/privacy.html" target="_blank" rel="noopener">プライバシーポリシー</a>に同意する</span>
-        </label>
-
+        <label class="pp-agree-label"><input type="checkbox" id="pp-agree"><span><a href="https://akinai.allbrain.one/privacy.html" target="_blank" rel="noopener">プライバシーポリシー</a>に同意する</span></label>
         <button type="submit" class="btn-submit">30秒で無料デモに申し込む</button>
       </form>
     </div>
   </div>
 </section>
 
-<!-- ========== FOOTER ========== -->
 <footer class="site-footer">
   <p>&copy; 2025 株式会社All Brain. All rights reserved.</p>
-  <p style="margin-top:8px;">
-    <a href="https://akinai.allbrain.one/privacy.html">プライバシーポリシー</a>
-    <a href="mailto:info@allbrain.one">お問い合わせ</a>
-  </p>
+  <p style="margin-top:8px;"><a href="https://akinai.allbrain.one/privacy.html">プライバシーポリシー</a><a href="mailto:info@allbrain.one">お問い合わせ</a></p>
 </footer>
 
-<!-- ========== MOBILE STICKY CTA ========== -->
-<div class="mobile-sticky">
-  <a href="#contact">30秒で無料デモに申し込む</a>
-</div>
+<div class="mobile-sticky"><a href="#contact">30秒で無料デモに申し込む</a></div>
 
-<!-- ========== SCRIPTS ========== -->
 <script>
-/* ----- Scroll fade-up ----- */
-(function(){
-  var els=document.querySelectorAll('.fade-up');
-  if(!els.length)return;
-  var io=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});
-  },{threshold:0.15});
-  els.forEach(function(el){io.observe(el);});
-})();
+(function(){var els=document.querySelectorAll('.fade-up');if(!els.length)return;var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:0.15});els.forEach(function(el){io.observe(el);});})();
 
-/* ----- Count-up ----- */
-(function(){
-  var nums=document.querySelectorAll('.count-up');
-  if(!nums.length)return;
-  var io=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if(!e.isIntersecting)return;
-      var el=e.target,target=parseFloat(el.dataset.target),isFloat=String(target).indexOf('.')!==-1,duration=1200,start=performance.now();
-      function tick(now){
-        var p=Math.min((now-start)/duration,1);
-        var val=p*target;
-        el.textContent=isFloat?val.toFixed(1):Math.floor(val);
-        if(p<1)requestAnimationFrame(tick);
-      }
-      requestAnimationFrame(tick);
-      io.unobserve(el);
-    });
-  },{threshold:0.5});
-  nums.forEach(function(n){io.observe(n);});
-})();
+(function(){var nums=document.querySelectorAll('.count-up');if(!nums.length)return;var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(!e.isIntersecting)return;var el=e.target,target=parseFloat(el.dataset.target),isFloat=String(target).indexOf('.')!==-1,duration=1200,start=performance.now();function tick(now){var p=Math.min((now-start)/duration,1);var val=p*target;el.textContent=isFloat?val.toFixed(1):Math.floor(val);if(p<1)requestAnimationFrame(tick);}requestAnimationFrame(tick);io.unobserve(el);});},{threshold:0.5});nums.forEach(function(n){io.observe(n);});})();
 
-/* ----- FAQ accordion ----- */
-document.querySelectorAll('.faq-q').forEach(function(btn){
-  btn.addEventListener('click',function(){
-    var open=this.classList.toggle('open');
-    var answer=this.nextElementSibling;
-    if(open){answer.style.maxHeight=answer.scrollHeight+'px';}
-    else{answer.style.maxHeight='0';}
-  });
-});
+document.querySelectorAll('.faq-q').forEach(function(btn){btn.addEventListener('click',function(){var open=this.classList.toggle('open');var answer=this.nextElementSibling;if(open){answer.style.maxHeight=answer.scrollHeight+'px';}else{answer.style.maxHeight='0';}});});
 
-/* ----- Pricing: scroll to Standard on mobile ----- */
-(function(){
-  var scroll=document.getElementById('price-scroll');
-  var std=document.getElementById('price-standard');
-  if(scroll&&std){
-    setTimeout(function(){
-      var offset=std.offsetLeft-(scroll.clientWidth-std.offsetWidth)/2;
-      scroll.scrollLeft=Math.max(0,offset);
-    },200);
-  }
-})();
+(function(){var scroll=document.getElementById('price-scroll');var std=document.getElementById('price-standard');if(scroll&&std){setTimeout(function(){var offset=std.offsetLeft-(scroll.clientWidth-std.offsetWidth)/2;scroll.scrollLeft=Math.max(0,offset);},200);}})();
 
-/* ----- Form submit ----- */
-function submitDemoForm(e){
-  e.preventDefault();
-  if(!document.getElementById('pp-agree').checked){
-    alert('プライバシーポリシーへの同意が必要です。');
-    return;
-  }
-  var f=e.target;
-  var data={
-    shop:f.shop.value,
-    name:f.name.value,
-    type:f.type.value,
-    tel:f.tel.value,
-    email:f.email.value,
-    note:f.note.value
-  };
-  var SCRIPT_URL='https://script.google.com/macros/s/YOUR_GAS_DEPLOYMENT_ID/exec';
-  fetch(SCRIPT_URL,{
-    method:'POST',
-    mode:'no-cors',
-    headers:{'Content-Type':'application/json'},
-    body:JSON.stringify(data)
-  }).then(function(){
-    f.reset();
-    f.innerHTML='<div style="text-align:center;padding:32px 0;"><p style="font-size:20px;font-weight:700;color:#fff;margin-bottom:8px;">お申し込みありがとうございます！</p><p style="font-size:14px;color:#94a3b8;">ご入力いただいたメールアドレスにデモのご案内をお送りします。</p></div>';
-  }).catch(function(){
-    alert('送信に失敗しました。お手数ですが info@allbrain.one までご連絡ください。');
-  });
-}
+function submitDemoForm(e){e.preventDefault();if(!document.getElementById('pp-agree').checked){alert('プライバシーポリシーへの同意が必要です。');return;}var f=e.target;var data={shop:f.shop.value,name:f.name.value,type:f.type.value,tel:f.tel.value,email:f.email.value,note:f.note.value};var SCRIPT_URL='https://script.google.com/macros/s/YOUR_GAS_DEPLOYMENT_ID/exec';fetch(SCRIPT_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}).then(function(){f.reset();f.innerHTML='<div style="text-align:center;padding:32px 0;"><p style="font-size:20px;font-weight:700;color:#fff;margin-bottom:8px;">お申し込みありがとうございます！</p><p style="font-size:14px;color:#94a3b8;">ご入力いただいたメールアドレスにデモのご案内をお送りします。</p></div>';}).catch(function(){alert('送信に失敗しました。お手数ですが info@allbrain.one までご連絡ください。');});}
 </script>
 </body>
 </html>
