@@ -211,6 +211,14 @@ ul{list-style:none;}
 
 .fade-up{opacity:0;transform:translateY(32px);transition:opacity .7s ease,transform .7s ease;}
 .fade-up.visible{opacity:1;transform:translateY(0);}
+
+.price-card li.disabled {
+  color: #94a3b8;
+  text-decoration: line-through;
+  opacity: .5;
+}
+
+  
 </style>
 </head>
 <body>
@@ -456,20 +464,56 @@ ul{list-style:none;}
           <div class="price-plan">ライト</div>
           <div class="price-amount">¥1,980<span>/月</span></div>
           <div class="price-period">税抜</div>
-          <ul class="price-list"><li>LINE注文・メニュー管理</li><li>顧客管理</li><li>AIソムリエ</li><li>AI自動配信（30件/月）</li><li>売上分析ダッシュボード</li><li>味覚診断・シェア画像</li></ul>
+          <ul class="price-list">
+            <ul>
+              <li>LINE注文・メニュー管理</li>
+              <li>顧客管理</li>
+              <li>AIソムリエ</li>
+              <li>AI自動配信（月30件まで）</li>
+              <li>売上分析</li>
+              <li>味覚診断</li>
+              <li class="disabled">味覚シェア画像生成</li>
+              <li class="disabled">月次レポート</li>
+              <li class="disabled">専任サポート</li>
+            </ul>
+          </ul>
         </div>
         <div class="price-card recommended fade-up" id="price-standard">
           <div class="price-badge">おすすめ</div>
           <div class="price-plan">スタンダード</div>
           <div class="price-amount">¥2,980<span>/月</span></div>
           <div class="price-period">税抜</div>
-          <ul class="price-list"><li>LINE注文・メニュー管理</li><li>顧客管理</li><li>AIソムリエ</li><li>AI自動配信（無制限）</li><li>売上分析ダッシュボード</li><li>味覚診断・シェア画像</li></ul>
+          <ul class="price-list">
+            <ul>
+              <li>LINE注文・メニュー管理</li>
+              <li>顧客管理</li>
+              <li>AIソムリエ</li>
+              <li>AI自動配信（無制限）</li>
+              <li>売上分析</li>
+              <li>味覚診断</li>
+              <li>味覚シェア画像生成</li>
+              <li class="disabled">月次レポート</li>
+              <li class="disabled">専任サポート</li>
+            </ul>          
+          </ul>
         </div>
         <div class="price-card fade-up">
           <div class="price-plan">プレミアム</div>
           <div class="price-amount">¥4,980<span>/月</span></div>
           <div class="price-period">税抜</div>
-          <ul class="price-list"><li>LINE注文・メニュー管理</li><li>顧客管理</li><li>AIソムリエ</li><li>AI自動配信（無制限）</li><li>売上分析ダッシュボード</li><li>味覚診断 + 月次レポート + 専任サポート</li></ul>
+          <ul class="price-list">
+            <ul>
+              <li>LINE注文・メニュー管理</li>
+              <li>顧客管理</li>
+              <li>AIソムリエ</li>
+              <li>AI自動配信（無制限）</li>
+              <li>売上分析</li>
+              <li>味覚診断</li>
+              <li>味覚シェア画像生成</li>
+              <li>月次レポート</li>
+              <li>専任サポート</li>
+            </ul>
+          </ul>
         </div>
       </div>
     </div>
