@@ -607,7 +607,34 @@ document.querySelectorAll('.faq-q').forEach(function(btn){btn.addEventListener('
 
 (function(){var scroll=document.getElementById('price-scroll');var std=document.getElementById('price-standard');if(scroll&&std){setTimeout(function(){var offset=std.offsetLeft-(scroll.clientWidth-std.offsetWidth)/2;scroll.scrollLeft=Math.max(0,offset);},200);}})();
 
-function submitDemoForm(e){e.preventDefault();if(!document.getElementById('pp-agree').checked){alert('プライバシーポリシーへの同意が必要です。');return;}var f=e.target;var data={shop:f.shop.value,name:f.name.value,type:f.type.value,tel:f.tel.value,email:f.email.value,note:f.note.value};var SCRIPT_URL='https://script.google.com/macros/s/YOUR_GAS_DEPLOYMENT_ID/exec';fetch(SCRIPT_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}).then(function(){f.reset();f.innerHTML='<div style="text-align:center;padding:32px 0;"><p style="font-size:20px;font-weight:700;color:#fff;margin-bottom:8px;">お申し込みありがとうございます！</p><p style="font-size:14px;color:#94a3b8;">ご入力いただいたメールアドレスにデモのご案内をお送りします。</p></div>';}).catch(function(){alert('送信に失敗しました。お手数ですが info@allbrain.one までご連絡ください。');});}
+function submitDemoForm(e){
+  e.preventDefault();
+  if(!document.getElementById('pp-agree').checked){
+    alert('プライバシーポリシーへの同意が必要です。');
+    return;
+  }
+  var f=e.target;
+  var data={
+    shopName: f.shop.value,
+    name:     f.name.value,
+    type:     f.type.value,
+    phone:    f.tel.value,
+    email:    f.email.value,
+    note:     f.note.value
+  };
+  var SCRIPT_URL='https://script.google.com/macros/s/AKfycbxfsdTW4RJGQ5Xhst1pYCwEwmto0VeijNNmT2onac0ld0pPxvSiKnsTglJs08rGP2KD/exec';
+  fetch(SCRIPT_URL,{
+    method:'POST',
+    mode:'no-cors',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify(data)
+  }).then(function(){
+    f.reset();
+    f.innerHTML='<div style="text-align:center;padding:32px 0;"><p style="font-size:20px;font-weight:700;color:#fff;margin-bottom:8px;">お申し込みありがとうございます！</p><p style="font-size:14px;color:#94a3b8;">ご入力いただいたメールアドレスにデモのご案内をお送りします。</p></div>';
+  }).catch(function(){
+    alert('送信に失敗しました。お手数ですが info@allbrain.one までご連絡ください。');
+  });
+}
 </script>
 </body>
 </html>
